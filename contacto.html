@@ -1,24 +1,28 @@
-<!doctype html><html lang="es"><head>
-<meta charset="utf-8"><title>Contacto | JUSTISERV S.A.</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="justiserv-logo.png">
-<link rel="stylesheet" href="styles.css">
-<img src="justiserv-logo.png" alt="JUSTISERV S.A.">
-</head><body>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Contacto | JUSTISERV S.A.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="assets/img/justiserv-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
 
 <!-- NAV -->
 <header class="navbar">
   <div class="container" style="display:flex;align-items:center;gap:18px;justify-content:space-between">
     <a class="navbar-brand" href="index.html" style="display:flex;align-items:center;gap:10px">
-       <img src="assets/img/justiserv-logo.png" alt="JUSTISERV S.A." width="65" height="65" style="margin-top:4px;vertical-align:middle;">
+      <img src="assets/img/justiserv-logo.png" width="40" height="40" alt="JUSTISERV S.A.">
       <span style="font-weight:900;color:#0b2239">JUSTISERV S.A.</span>
     </a>
     <nav style="display:flex;gap:18px;flex-wrap:wrap">
-      <a class="nav-link" data-page="index.html" href="index.html">Inicio</a>
-      <a class="nav-link" data-page="servicios.html" href="servicios.html">Servicios</a>
-      <a class="nav-link" data-page="seguimiento.html" href="seguimiento.html">Seguimiento</a>
-      <a class="nav-link" data-page="cotiza.html" href="cotiza.html">Cotiza</a>
-      <a class="nav-link" data-page="contacto.html" href="contacto.html">Contacto</a>
+      <a class="nav-link" href="index.html">Inicio</a>
+      <a class="nav-link" href="servicios.html">Servicios</a>
+      <a class="nav-link" href="seguimiento.html">Seguimiento</a>
+      <a class="nav-link" href="cotiza.html">Cotiza</a>
+      <a class="nav-link active" href="contacto.html">Contacto</a>
       <a class="btn btn-primary" href="cotiza.html">Cotiza ahora</a>
     </nav>
   </div>
@@ -27,21 +31,35 @@
 <section class="section">
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Inicio</a> · Contacto</div>
-    <h1 style="color:var(--ink);margin:0 0 20px 0">Contacto</h1>
+    <h1 style="color:var(--ink);margin:0 0 20px 0">Contáctanos</h1>
 
     <div class="row cols-2">
-      <div class="card reveal"><div class="card-body">
-        <h3>Datos</h3>
-        <p class="mb-0">Tel: +593 98 292 3258</p>
-        <p class="mb-0">Email: transportes.justiser.sa@gmail.com</p>
-        <p>Dirección: Av León Febres Cordero Ribadeneyra, Daule 091910</p>
-        <h3 class="mt-4">Horario</h3>
-        <p>Lunes a Domingo, 8:00–18:00</p>
-      </div></div>
+      <!-- Datos -->
+      <div class="card reveal">
+        <div class="card-body">
+          <h3 class="mb-2">Datos de contacto</h3>
+          <p class="mb-0"><strong>Teléfono:</strong> +593 98 292 3258</p>
+          <p class="mb-0"><strong>Email:</strong> <a href="mailto:transportes.justiserv.sa@gmail.com">transportes.justiserv.sa@gmail.com</a></p>
+          <p class="mb-0"><strong>Dirección:</strong> River Plaza, Guayaquil, Ecuador</p>
 
-      <div class="reveal">
-        <iframe class="map" title="Ubicación" loading="lazy"
-          src="https://www.google.com/maps?q=Guayaquil&output=embed"></iframe>
+          <h3 class="mt-4 mb-2">Horario de atención</h3>
+          <p>Lunes a Sábado · 08:00 – 18:00</p>
+
+          <h3 class="mt-4 mb-2">Atención personalizada</h3>
+          <p>Te ofrecemos soporte inmediato, seguimiento en tiempo real y asesoría logística profesional.</p>
+        </div>
+      </div>
+
+      <!-- Mapa -->
+      <div class="card reveal">
+        <div class="card-body">
+          <h3 class="mb-2">Ubicación</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3995.9258821586253!2d-79.9126551!3d-2.0507508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d131aabbfce07%3A0xe7d225476b14e50!2sRiver%20Plaza!5e0!3m2!1ses-419!2sec!4v1739699999999!5m2!1ses-419!2sec"
+            width="100%" height="360" style="border:0;border-radius:16px;box-shadow:var(--shadow);" allowfullscreen=""
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
     </div>
   </div>
@@ -49,10 +67,15 @@
 
 <footer>
   <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
-    <div class="brand"><img src="assets/img/justiserv-logo.png" width="28" height="28"><span>JUSTISERV S.A.</span></div>
+    <div class="brand">
+      <img src="assets/img/justiserv-logo.png" width="28" height="28" alt="">
+      <span>JUSTISERV S.A.</span>
+    </div>
     <div class="small">© <span id="year"></span> Todos los derechos reservados.</div>
   </div>
 </footer>
+
 <a class="wa-btn" href="https://wa.me/593982923258">WhatsApp</a>
 <script src="assets/js/main.js"></script>
-</body></html>
+</body>
+</html>
