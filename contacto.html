@@ -19,6 +19,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <style>
+    /* 🔹 Botones azules iguales al de la parte superior */
+    .btn-custom {
+      background: var(--brand);
+      color: #fff !important;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .btn-custom:hover {
+      background: var(--brand-dark);
+    }
+  </style>
 </head>
 <body>
 
@@ -64,8 +81,10 @@
           <p>Soporte inmediato, seguimiento en tiempo real y asesoría logística profesional.</p>
 
           <div class="mt-3" style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn btn-outline" href="https://wa.me/593982923258?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20env%C3%ADos." target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a class="btn btn-outline" href="cotiza.html">Cotizar ahora</a>
+            <a class="btn-custom" 
+               href="https://wa.me/593982923258?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20env%C3%ADos."
+               target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="btn-custom" href="cotiza.html">Cotizar ahora</a>
           </div>
         </div>
       </div>
@@ -81,6 +100,10 @@
             style="border:0;border-radius:16px;box-shadow:var(--shadow)"
             loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
           </iframe>
+          <p class="mt-2">
+            <a href="https://www.google.com/maps/place/River+Plaza/@-2.0507508,-79.9126551,17z"
+               target="_blank" rel="noopener noreferrer">📍 Ver en Google Maps</a>
+          </p>
         </div>
       </div>
     </div>
