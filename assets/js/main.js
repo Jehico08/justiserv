@@ -40,4 +40,13 @@ if ("serviceWorker" in navigator) {
       .catch(err => console.error("SW error:", err));
   });
 }
+// Registrar el Service Worker (PWA)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/justiserv/sw.js')
+      .then(() => console.log('✅ Service Worker activo'))
+      .catch(err => console.error('Error SW:', err));
+  });
+}
+
 
