@@ -33,5 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/justiserv/sw.js")
+      .then(() => console.log("✅ Service Worker registrado"))
+      .catch(err => console.error("SW error:", err));
+  });
+}
 
