@@ -112,6 +112,16 @@ footer .brand img{vertical-align:middle}
 /* ===== Menú responsive + icono ☰→✖ ===== */
 .nav-toggle{display:none}
 
+@media (max-width: 900px) {
+  .nav.open {
+    gap: 6px;
+    padding: 8px 12px;
+  }
+  .nav-link {
+    font-size: 15px;
+  }
+}
+
 /* móvil */
 @media (max-width:900px){
   .nav-toggle{
@@ -132,4 +142,30 @@ footer .brand img{vertical-align:middle}
     background:#fff;border:1px solid #eef2f7;border-radius:12px;
     padding:10px 16px;gap:10px;box-shadow:0 4px 20px rgba(0,0,0,.08)
   }
+}
+/* Fix barra móvil */
+@media (max-width:900px){
+  .navbar .container{position:relative}
+  .navbar-brand span{white-space:nowrap}  /* evita salto JUSTISERV S.A. */
+
+  /* fuerza layout del dropdown */
+  .nav{display:none !important}
+  .nav.open{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start;
+    position:absolute;
+    z-index:1200;
+    top:60px;           /* debajo del header */
+    left:12px;
+    right:12px;
+    background:#fff;
+    border:1px solid #eef2f7;
+    border-radius:12px;
+    padding:10px 12px;
+    gap:6px;
+    box-shadow:0 4px 20px rgba(0,0,0,.08);
+  }
+  .nav-link{display:block;padding:8px 4px;font-size:15px}
+  .nav .btn{width:100%;text-align:center;margin-top:6px}
 }
