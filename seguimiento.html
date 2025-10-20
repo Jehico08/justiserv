@@ -10,20 +10,19 @@
 </head>
 <body>
 
-<!-- NAV -->
 <header class="navbar">
   <div class="container" style="display:flex;align-items:center;gap:18px;justify-content:space-between;position:relative;">
-    <a class="navbar-brand" href="index.html" style="display:flex;align-items:center;gap:10px">
+    <a class="navbar-brand" href="index.html" style="display:flex;align-items:center;gap:10px;white-space:nowrap">
       <img src="assets/img/justiserv-logo.png" alt="JUSTISERV S.A." width="52" height="52">
-      <span style="font-weight:900;color:#0b2239;white-space:nowrap">JUSTISERV S.A.</span>
+      <span style="font-weight:900;color:#0b2239">JUSTISERV S.A.</span>
     </a>
 
     <button class="nav-toggle" aria-label="Abrir menú">☰</button>
 
-    <nav class="nav">
+    <nav class="nav" style="display:flex;gap:18px;flex-wrap:wrap;align-items:center">
       <a class="nav-link" href="index.html">Inicio</a>
       <a class="nav-link" href="servicios.html">Servicios</a>
-      <a class="nav-link" href="seguimiento.html">Seguimiento</a>
+      <a class="nav-link active" aria-current="page" href="seguimiento.html">Seguimiento</a>
       <a class="nav-link" href="cotiza.html">Cotiza</a>
       <a class="nav-link" href="contacto.html">Contacto</a>
       <a class="btn btn-primary" href="cotiza.html">Cotiza ahora</a>
@@ -40,16 +39,11 @@
       <div class="card-body">
         <form id="track-form" novalidate>
           <label>Número de guía</label>
-          <input type="text" id="tracking" placeholder="JS-000123456"
-                 style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0" required>
-
+          <input type="text" id="tracking" placeholder="JS-000123456" style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0" required>
           <label>Documento (opcional)</label>
-          <input type="text" id="doc" placeholder="RUC/CI"
-                 style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0">
-
+          <input type="text" id="doc" placeholder="RUC/CI" style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0">
           <button class="btn btn-primary" type="submit">Consultar</button>
         </form>
-
         <div id="track-result" class="mt-3" style="display:none">
           <div class="badge">Estado: En tránsito</div>
           <ul class="mt-2">
@@ -62,13 +56,13 @@
     </div>
 
     <script>
-      const tf = document.getElementById('track-form');
-      if (tf) {
-        tf.addEventListener('submit', (e) => {
+      const tf=document.getElementById('track-form');
+      if(tf){
+        tf.addEventListener('submit',e=>{
           e.preventDefault();
-          const v = document.getElementById('tracking').value.trim();
-          if (v.length < 5) { alert('Ingresa un número de guía válido'); return; }
-          document.getElementById('track-result').style.display = 'block';
+          const v=document.getElementById('tracking').value.trim();
+          if(v.length<5) return alert('Ingresa un número de guía válido');
+          document.getElementById('track-result').style.display='block';
         });
       }
     </script>
@@ -87,7 +81,6 @@
 
 <a class="wa-btn" href="https://wa.me/593982923258" aria-label="WhatsApp">WhatsApp</a>
 
-<!-- JS -->
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>
