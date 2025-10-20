@@ -21,32 +21,23 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
 
   <style>
-    /* 🔹 Botones azules iguales al de la parte superior */
-    .btn-custom {
-      background: var(--brand);
-      color: #fff !important;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .btn-custom:hover {
-      background: var(--brand-dark);
-    }
+    .btn-custom{background:var(--brand);color:#fff!important;border:none;padding:10px 18px;border-radius:8px;font-weight:600;text-decoration:none;transition:background .3s}
+    .btn-custom:hover{background:var(--brand-dark)}
   </style>
 </head>
 <body>
 
 <!-- NAV -->
 <header class="navbar">
-  <div class="container" style="display:flex;align-items:center;gap:18px;justify-content:space-between">
+  <div class="container" style="display:flex;align-items:center;gap:18px;justify-content:space-between;position:relative;">
     <a class="navbar-brand" href="index.html" style="display:flex;align-items:center;gap:10px">
-      <img src="assets/img/justiserv-logo.png" width="40" height="40" alt="JUSTISERV S.A." />
-      <span style="font-weight:900;color:#0b2239">JUSTISERV S.A.</span>
+      <img src="assets/img/justiserv-logo.png" width="52" height="52" alt="JUSTISERV S.A." />
+      <span style="font-weight:900;color:#0b2239;white-space:nowrap">JUSTISERV S.A.</span>
     </a>
-    <nav style="display:flex;gap:18px;flex-wrap:wrap">
+
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+
+    <nav class="nav">
       <a class="nav-link" href="index.html">Inicio</a>
       <a class="nav-link" href="servicios.html">Servicios</a>
       <a class="nav-link" href="seguimiento.html">Seguimiento</a>
@@ -83,7 +74,7 @@
           <div class="mt-3" style="display:flex;gap:10px;flex-wrap:wrap">
             <a class="btn-custom" 
                href="https://wa.me/593982923258?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20env%C3%ADos."
-               target="_blank" rel="noopener noreferrer">WhatsApp</a>
+               target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">WhatsApp</a>
             <a class="btn-custom" href="cotiza.html">Cotizar ahora</a>
           </div>
         </div>
@@ -109,7 +100,7 @@
 
 <footer>
   <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
-    <div class="brand">
+    <div class="brand" style="display:flex;align-items:center;gap:10px">
       <img src="assets/img/justiserv-logo.png" width="28" height="28" alt="JUSTISERV S.A." />
       <span>JUSTISERV S.A.</span>
     </div>
@@ -117,7 +108,7 @@
   </div>
 </footer>
 
-<a class="wa-btn" href="https://wa.me/593982923258?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20env%C3%ADos.">WhatsApp</a>
+<a class="wa-btn" href="https://wa.me/593982923258?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20env%C3%ADos." aria-label="WhatsApp">WhatsApp</a>
 
 <!-- Datos estructurados -->
 <script type="application/ld+json">
@@ -133,6 +124,7 @@
 }
 </script>
 
-<script src="assets/js/main.js"></script>
+<!-- JS -->
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
