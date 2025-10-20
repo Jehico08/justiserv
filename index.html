@@ -24,6 +24,24 @@
   <link rel="icon" href="assets/img/justiserv-logo.png">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Animación fade-up */
+    @keyframes fadeUp {
+      from {opacity:0; transform:translateY(20px);}
+      to {opacity:1; transform:none;}
+    }
+    .fade-item {
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .6s ease, transform .6s ease;
+    }
+    .fade-show {
+      opacity:1;
+      transform:none;
+      animation:fadeUp .8s ease forwards;
+    }
+  </style>
 </head>
 
 <body>
@@ -93,20 +111,20 @@
 </section>
 
 <!-- ===== CONFIANZA Y RESPALDO ===== -->
-<section class="section alt">
+<section class="section" style="background:linear-gradient(135deg,#0B7BC1,#085F96,#053E6B);color:#fff;">
   <div class="container center reveal">
     <h2>Confianza y respaldo</h2>
-    <p>Certificaciones y tecnología que garantizan seguridad y calidad.</p>
-    <div class="row cols-3 mt-3" style="align-items:center;justify-content:center;font-size:3rem;color:#0B7BC1">
-      <div>
+    <p style="color:#dbe9f9;">Certificaciones y tecnología que garantizan seguridad y calidad.</p>
+    <div class="row cols-3 mt-3" style="align-items:center;justify-content:center;font-size:2.2rem;">
+      <div class="fade-item">
         <i class="fa-solid fa-certificate"></i>
         <p class="mt-2"><strong>ISO 9001</strong><br>Gestión de calidad</p>
       </div>
-      <div>
+      <div class="fade-item">
         <i class="fa-solid fa-shield-halved"></i>
         <p class="mt-2"><strong>BASC</strong><br>Seguridad en comercio</p>
       </div>
-      <div>
+      <div class="fade-item">
         <i class="fa-solid fa-location-dot"></i>
         <p class="mt-2"><strong>GPS 24/7</strong><br>Monitoreo satelital</p>
       </div>
@@ -134,15 +152,21 @@
   </div>
 </footer>
 
-<!-- ===== BOTÓN WHATSAPP ===== -->
 <a class="wa-btn" href="https://wa.me/593982923258" aria-label="WhatsApp">WhatsApp</a>
 
-<!-- ===== SCRIPTS ===== -->
+<!-- ===== SCRIPT ===== -->
 <script src="assets/js/main.js" defer></script>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
+  // animación fade-up íconos
+  document.addEventListener('scroll', () => {
+    document.querySelectorAll('.fade-item').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) el.classList.add('fade-show');
+    });
+  });
+</script>
 </body>
 </html>
 
