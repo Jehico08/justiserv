@@ -169,3 +169,16 @@ footer .brand img{vertical-align:middle}
   .nav-link{display:block;padding:8px 4px;font-size:15px}
   .nav .btn{width:100%;text-align:center;margin-top:6px}
 }
+/* Fix prioridad/z-index en móvil */
+@media (max-width:900px){
+  .navbar .container{ position: relative; }
+  .nav-toggle{ z-index:1300 }           /* por si algo tapa el botón */
+  .nav{ display:none !important; }
+  .nav.open{
+    display:flex !important; flex-direction:column;
+    position:absolute; top:60px; right:12px; left:auto;
+    background:#fff; border:1px solid #eef2f7; border-radius:12px;
+    padding:10px 12px; gap:8px; box-shadow:0 4px 20px rgba(0,0,0,.08);
+  }
+  .nav .btn{ width:100%; text-align:center; }
+}

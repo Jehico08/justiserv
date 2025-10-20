@@ -122,6 +122,12 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+<button class="nav-toggle" aria-label="Abrir menú"
+  onclick="
+    const m=document.querySelector('.nav');
+    const open=m.classList.toggle('open');
+    this.setAttribute('aria-expanded', open);
+  ">☰</button>
 
 </body>
 </html>
