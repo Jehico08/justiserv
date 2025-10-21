@@ -160,4 +160,19 @@ table thead th { font-weight:700; color:#0A3D62 }
     width: 44px; height: 44px;   /* botón a juego */
   }
 }
+/* LOGO GRANDE en móvil */
+@media (max-width: 900px) {
+  .navbar-brand img {
+    height: 68px !important;   /* tamaño más grande */
+  }
+  .navbar-brand span {
+    font-size: 1.35rem !important; /* texto más grande */
+  }
+  .navbar .container {
+    padding: 6px 0; /* espacio superior/inferior */
+  }
+  .nav-toggle {
+    width: 46px; height: 46px;
+  }
+}
 
