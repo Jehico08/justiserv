@@ -1,5 +1,5 @@
 /* ===== Paleta ===== */
-:root {
+:root{
   --brand:#0B7BC1;
   --brand-2:#12A2E6;
   --brand-dark:#085F96;
@@ -15,13 +15,11 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;scroll-behavior:smooth}
 body{
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--text);
-  background:#fff;
-  line-height:1.6;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--text);background:#fff;line-height:1.6;
 }
 
-/* ===== Navbar (UNIFICADA) ===== */
+/* ===== Navbar ===== */
 .navbar{
   position:sticky;top:0;z-index:1030;
   background:#fff;border-bottom:1px solid #eef2f7;
@@ -29,12 +27,11 @@ body{
 }
 .navbar .container{
   display:flex;align-items:center;justify-content:space-between;
-  gap:18px;position:relative; /* necesario para dropdown */
+  gap:18px;position:relative;
 }
 .navbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .navbar-brand img{height:52px;width:auto;display:block}
-.navbar-brand span{font-weight:900;color:#0b2239;white-space:nowrap}
-@media(max-width:768px){.navbar-brand img{height:42px}}
+.navbar-brand span{font-weight:900;color:#062c4f;white-space:nowrap}
 
 .nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 .nav-link{color:#334155;font-weight:600;text-decoration:none;transition:.2s}
@@ -47,50 +44,37 @@ body{
 .btn-outline{background:transparent;border:1.6px solid #cfe8f8;color:var(--ink)}
 .btn-outline:hover{background:var(--brand);border:none;color:#fff!important}
 
-/* ===== Menú responsive (una sola versión) ===== */
-.nav-toggle{display:none;border:1px solid #eef2f7;background:#fff;border-radius:8px;padding:6px 10px;cursor:pointer;font-size:0;line-height:0}
+/* ===== Menú responsive ===== */
+.nav-toggle{
+  display:none;border:1px solid #eef2f7;background:#fff;border-radius:8px;
+  padding:6px 10px;cursor:pointer;font-size:0;line-height:0
+}
 .nav-toggle::before{content:"☰";font-size:20px;color:#0b2239}
 .nav-toggle[aria-expanded="true"]::before{content:"✖"}
 
-@media (max-width:900px){
-  .nav-toggle{display:inline-flex;align-items:center;justify-content:center;z-index:1300}
-  .nav{display:none}
-  .nav.open{
-    display:flex;flex-direction:column;align-items:flex-start;
-    position:absolute;top:60px;left:12px;right:12px;z-index:1200;
-    background:#fff;border:1px solid #eef2f7;border-radius:12px;
-    padding:12px 14px;gap:8px;box-shadow:0 4px 20px rgba(0,0,0,.08)
-  }
-  .nav-link{display:block;padding:8px 4px;font-size:15px}
-  .nav .btn{width:100%;text-align:center;margin-top:6px}
-}
-
 /* ===== Hero ===== */
-.hero{background:radial-gradient(1200px 600px at 20% 10%,#0b66a3 0%,#095688 45%,#084a76 100%);color:#fff;padding:56px 0 48px}
+.hero{
+  background:radial-gradient(1200px 600px at 20% 10%,#0b66a3 0%,#095688 45%,#084a76 100%);
+  color:#fff;padding:56px 0 48px;
+}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;min-height:520px}
 .hero-copy h1{font-size:clamp(32px,5vw,56px);line-height:1.05;margin:10px 0 12px}
 .hero-copy p{color:#d7e7f6;max-width:640px;margin-bottom:18px}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
-.hero .btn-primary{background:var(--brand)}
-.hero .btn-primary:hover{background:var(--brand-dark)}
 .hero .btn:not(.btn-primary){background:transparent;border:1.6px solid rgba(255,255,255,.65);color:#fff}
 .hero .btn:not(.btn-primary):hover{background:rgba(255,255,255,.1);border-color:#fff}
 .pill{display:inline-block;background:rgba(255,255,255,.12);color:#e9f3fb;padding:8px 14px;border-radius:999px;font-size:14px;letter-spacing:.2px}
 
-/* ===== Estadísticas ===== */
+/* ===== Stats ===== */
 .stats{display:flex;gap:18px;flex-wrap:wrap}
 .stat{background:#fff;color:#0b2239;font-weight:800;text-align:center;border-radius:16px;padding:18px 24px;min-width:160px;box-shadow:0 6px 24px rgba(0,0,0,.12)}
 .stat span{display:block;color:#374151;font-weight:600;font-size:.9rem;margin-top:4px}
 
 /* ===== Imagen Hero ===== */
 .hero-media{align-self:stretch;display:flex;justify-content:flex-end}
-.hero-media img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:center right;border-radius:12px;filter:drop-shadow(0 10px 30px rgba(0,0,0,.25))}
-
-/* ===== Responsive hero ===== */
-@media(max-width:1024px){
-  .hero-grid{grid-template-columns:1fr;min-height:auto}
-  .hero-media{order:-1;justify-content:center;align-self:center}
-  .hero-media img{width:88%;height:auto;max-width:420px}
+.hero-media img{
+  width:100%;height:100%;max-width:none;object-fit:cover;object-position:center right;
+  border-radius:12px;filter:drop-shadow(0 10px 30px rgba(0,0,0,.25));
 }
 
 /* ===== Secciones ===== */
@@ -103,7 +87,7 @@ body{
 .card h3{margin:0 0 .5rem;color:var(--ink)}
 .card p{color:#334155;margin:.25rem 0}
 
-/* ===== Grid general ===== */
+/* ===== Grid ===== */
 .container{max-width:1140px;margin:auto;padding:0 16px}
 .row{display:grid;gap:24px}
 .row.cols-2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
@@ -115,7 +99,10 @@ footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:80
 footer .brand img{vertical-align:middle}
 
 /* ===== WhatsApp ===== */
-.wa-btn{position:fixed;right:18px;bottom:18px;z-index:1050;padding:12px 16px;border-radius:999px;background:#25D366;color:#fff;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);transition:.3s}
+.wa-btn{
+  position:fixed;right:18px;bottom:18px;z-index:1050;padding:12px 16px;border-radius:999px;
+  background:#25D366;color:#fff;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);transition:.3s
+}
 .wa-btn:hover{opacity:.9}
 
 /* ===== Animaciones ===== */
@@ -132,70 +119,36 @@ footer .brand img{vertical-align:middle}
 .map{border:0;border-radius:16px;box-shadow:var(--shadow);width:100%;height:360px}
 
 /* ===== Tablas ===== */
-table th, table td { border-bottom:1px solid #eef2f7 }
-table thead th { font-weight:700; color:#0A3D62 }
-/* ===== Ajuste de logo móvil ===== */
-@media (max-width: 600px) {
-  .navbar-brand img {
-    height: 56px; /* antes 42px */
-  }
+table th,table td{border-bottom:1px solid #eef2f7}
+table thead th{font-weight:700;color:#0A3D62}
 
-  .navbar {
-    padding: 4px 0; /* más espacio vertical */
-  }
-}
-/* Logo + navbar más grande en móvil (forzado) */
-@media (max-width: 900px) {
-  .navbar-brand img{
-    height: 60px !important;   /* antes 42px */
-  }
-  .navbar-brand span{
-    font-size: 1.25rem !important; /* texto JUSTISERV S.A. más grande */
-  }
-  .navbar .container{
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-  .nav-toggle{
-    width: 44px; height: 44px;   /* botón a juego */
-  }
-}
-/* LOGO GRANDE en móvil */
-@media (max-width: 900px) {
-  .navbar-brand img {
-    height: 68px !important;   /* tamaño más grande */
-  }
-  .navbar-brand span {
-    font-size: 1.35rem !important; /* texto más grande */
-  }
-  .navbar .container {
-    padding: 6px 0; /* espacio superior/inferior */
-  }
-  .nav-toggle {
-    width: 46px; height: 46px;
-  }
-}
-/* ===== LOGO móvil grande centrado ===== */
-@media (max-width: 900px) {
-  header.navbar .navbar-brand img {
-    height: 72px !important;
-    width: auto !important;
-  }
-
-  header.navbar .navbar-brand span {
-    font-size: 1.35rem !important;
-  }
-
-  header.navbar .container {
-    display: flex;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 10px 12px !important;
-  }
-
-  .nav-toggle {
-    width: 46px !important;
-    height: 46px !important;
-  }
+/* ===== Responsive ===== */
+@media (max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;min-height:auto}
+  .hero-media{order:-1;justify-content:center;align-self:center}
 }
 
+/* ===== Móvil (<=900px) ===== */
+@media (max-width:900px){
+  /* Navbar / Logo */
+  .navbar .container{padding:10px 12px !important}
+  .navbar-brand img{height:72px !important;width:auto !important}
+  .navbar-brand span{font-size:1.35rem !important;color:#062c4f !important}
+  .nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px}
+
+  /* Menú desplegable */
+  .nav{display:none}
+  .nav.open{
+    display:flex;flex-direction:column;align-items:flex-start;
+    position:absolute;top:60px;left:12px;right:12px;z-index:1200;
+    background:#fff;border:1px solid #eef2f7;border-radius:12px;
+    padding:12px 14px;gap:8px;box-shadow:0 4px 20px rgba(0,0,0,.08)
+  }
+  .nav-link{display:block;padding:8px 4px;font-size:15px}
+  .nav .btn{width:100%;text-align:center;margin-top:6px}
+
+  /* Hero image más grande */
+  .hero-media img{
+    width:95% !important;max-width:460px !important;height:auto !important;border-radius:16px !important;
+  }
+}
