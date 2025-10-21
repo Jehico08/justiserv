@@ -134,4 +134,14 @@ footer .brand img{vertical-align:middle}
 /* ===== Tablas ===== */
 table th, table td { border-bottom:1px solid #eef2f7 }
 table thead th { font-weight:700; color:#0A3D62 }
+/* ===== Ajuste de logo móvil ===== */
+@media (max-width: 600px) {
+  .navbar-brand img {
+    height: 56px; /* antes 42px */
+  }
+
+  .navbar {
+    padding: 4px 0; /* más espacio vertical */
+  }
+}
 
