@@ -6,17 +6,9 @@
   "display": "standalone",
   "background_color": "#0B7BC1",
   "theme_color": "#0B7BC1",
-  "description": "Transporte de carga pesada, courier y logística integral en Ecuador.",
   "icons": [
-    {
-      "src": "assets/img/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/img/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+    { "src": "assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "description": "Transporte de carga pesada, courier y logística integral en Ecuador."
 }
