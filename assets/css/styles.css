@@ -175,4 +175,27 @@ table thead th { font-weight:700; color:#0A3D62 }
     width: 46px; height: 46px;
   }
 }
+/* ===== LOGO móvil grande centrado ===== */
+@media (max-width: 900px) {
+  header.navbar .navbar-brand img {
+    height: 72px !important;
+    width: auto !important;
+  }
+
+  header.navbar .navbar-brand span {
+    font-size: 1.35rem !important;
+  }
+
+  header.navbar .container {
+    display: flex;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 10px 12px !important;
+  }
+
+  .nav-toggle {
+    width: 46px !important;
+    height: 46px !important;
+  }
+}
 
