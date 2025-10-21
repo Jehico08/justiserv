@@ -21,16 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==== MENÚ RESPONSIVE ====
   const navToggle = document.querySelector('.nav-toggle');
-  const navMenu = document.querySelector('.nav');
-  if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', isOpen);
-    });
-    // Cierra el menú al hacer clic en un enlace
-    document.querySelectorAll('.nav a').forEach(link => {
-      link.addEventListener('click', () => navMenu.classList.remove('open'));
-    });
+const navMenu = document.querySelector('.nav');
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('open');
+    navToggle.textContent = isOpen ? '✕' : '☰';
+  });
   }
 });
 if ("serviceWorker" in navigator) {
