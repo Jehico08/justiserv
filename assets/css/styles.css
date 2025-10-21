@@ -144,4 +144,20 @@ table thead th { font-weight:700; color:#0A3D62 }
     padding: 4px 0; /* más espacio vertical */
   }
 }
+/* Logo + navbar más grande en móvil (forzado) */
+@media (max-width: 900px) {
+  .navbar-brand img{
+    height: 60px !important;   /* antes 42px */
+  }
+  .navbar-brand span{
+    font-size: 1.25rem !important; /* texto JUSTISERV S.A. más grande */
+  }
+  .navbar .container{
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  .nav-toggle{
+    width: 44px; height: 44px;   /* botón a juego */
+  }
+}
 
