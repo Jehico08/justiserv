@@ -192,4 +192,10 @@ footer .brand{display:flex; align-items:center; gap:10px; color:#fff; font-weigh
     gap: 18px;              /* separación visual */
   }
 }
+.hero-ctas .btn {
+  padding: 16px 34px;
+  font-size: 1.1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
 
