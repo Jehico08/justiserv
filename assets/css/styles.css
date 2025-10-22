@@ -135,3 +135,39 @@ table thead th{font-weight:700;color:#0A3D62}
   /* Hero media más grande */
   .hero-media img{width:96% !important;max-width:520px !important;height:auto !important;border-radius:16px !important}
 }
+/* Hero en 2 columnas: texto / imagen */
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items:center;
+  gap:40px;
+}
+@media (max-width:1024px){
+  .hero-grid{ grid-template-columns:1fr; }
+}
+
+/* Botón secundario (Ver servicios) coherente con el hero */
+.btn-secondary{
+  background:transparent;
+  border:2px solid rgba(255,255,255,.35);
+  color:#fff;
+  border-radius:12px;
+  padding:10px 16px;
+  font-weight:700;
+  text-decoration:none;
+  transition:.3s ease;
+}
+.btn-secondary:hover{
+  border-color:#fff;
+  background:rgba(255,255,255,.08);
+}
+
+/* KPIs más claros */
+.stats{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px;}
+.stat{
+  background:#fff;color:#0b2239;border-radius:16px;
+  padding:14px 18px;min-width:190px;text-align:center;
+  box-shadow:0 6px 24px rgba(0,0,0,.12);
+}
+.stat b{display:block;font-size:22px;color:#0A3D62;margin-bottom:4px;}
+.stat small{color:#334155;opacity:.85;}
