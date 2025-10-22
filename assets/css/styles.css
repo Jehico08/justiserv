@@ -179,4 +179,17 @@ footer .brand{display:flex; align-items:center; gap:10px; color:#fff; font-weigh
   .btn{padding:10px 14px}
   .stat{min-width:unset; width:100%}
 }
+/* Ajuste de tamaño de botones principales en hero */
+.hero-ctas .btn {
+  padding: 14px 28px;       /* más grandes */
+  font-size: 1.05rem;       /* texto más legible */
+  border-radius: 14px;      /* curvas suaves */
+}
+
+/* Ajuste extra en pantallas grandes */
+@media (min-width: 1024px) {
+  .hero-ctas {
+    gap: 18px;              /* separación visual */
+  }
+}
 
