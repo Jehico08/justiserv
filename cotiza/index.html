@@ -1,27 +1,23 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Cotiza | JUSTISERV S.A.</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="/assets/img/justiserv-logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <head>
   <meta charset="utf-8" />
-  <base href="/" />
-  ...
-  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <title>Cotiza  | JUSTISERV S.A.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Solicita una cotización rápida con JUSTISERV S.A. Transporte de carga, courier y logística integral en Ecuador. Respuesta en minutos." />
   <link rel="icon" href="/assets/img/justiserv-logo.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 
-</head>
 <body>
-
+<!-- NAV -->
 <header class="navbar">
-  <div class="container" style="display:flex;align-items:center;gap:18px;justify-content:space-between">
+  <div class="container navbar-inner">
     <a class="navbar-brand" href="/" style="display:flex;align-items:center;gap:10px">
-      <img src="/assets/img/justiserv-logo.png" alt="JUSTISERV S.A." width="52" height="52" style="margin-top:4px;vertical-align:middle;">
+      <img src="/assets/img/justiserv-logo.png" alt="JUSTISERV S.A." width="52" height="52" />
       <span style="font-weight:900;color:#0b2239">JUSTISERV S.A.</span>
     </a>
     <nav style="display:flex;gap:18px;flex-wrap:wrap">
@@ -35,103 +31,46 @@
   </div>
 </header>
 
+<!-- SECCIÓN COTIZACIÓN -->
 <section class="section">
   <div class="container">
     <div class="breadcrumb"><a href="/">Inicio</a> · Cotiza</div>
     <h1 style="color:var(--ink);margin:0 0 20px 0">Cotiza tu envío</h1>
 
-    <form class="card" action="https://formspree.io/f/xanpawvd" method="POST" style="max-width:960px;margin:0 auto;box-shadow:var(--shadow)">
-      <div class="card-body">
-        <label>Nombre</label>
-        <input name="nombre" required class="form-control" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0 12px">
-
-        <label>Email</label>
-        <input type="email" name="email" required class="form-control" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0 12px">
-
-        <label>Origen</label>
-        <input name="origen" class="form-control" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0 12px">
-
-        <label>Destino</label>
-        <input name="destino" class="form-control" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0 12px">
-
-        <label>Peso (kg)</label>
-        <input name="peso" class="form-control" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0 12px">
-
-        <label>Tamaño de la carga</label>
-        <select name="tamano" class="form-control" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0 12px">
-          <option value="20 pies">20 pies</option>
-          <option value="40 pies">40 pies</option>
-        </select>
-
-        <label>Detalle</label>
-        <textarea name="detalle" rows="4" class="form-control" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0 16px"></textarea>
-
-        <button class="btn btn-primary">Enviar cotización</button>
-      </div>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
-    <div class="brand"><img src="/assets/img/justiserv-logo.png" width="28" height="28"><span>JUSTISERV S.A.</span></div>
-    <div class="small">© <span id="year"></span> Todos los derechos reservados.</div>
-  </div>
-</footer>
-
-<a class="wa-btn" href="https://wa.me/5932923258">WhatsApp</a>
-<script src="/assets/js/main.js" defer></script>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body>
-</html>
-
-
-<section class="section">
-  <div class="container">
-    <div class="breadcrumb"><a href="index.html">Inicio</a> · Cotiza</div>
-    <h1 style="color:var(--ink);margin:0 0 20px 0">Cotiza tu envío</h1>
-
     <div class="row cols-2">
-      <!-- FORM -->
+      <!-- FORMULARIO -->
       <div class="card reveal">
         <div class="card-body">
           <form id="quote-form" action="https://formspree.io/f/xanpawvd" method="POST" novalidate>
-            <!-- antispam -->
             <input type="text" name="_gotcha" style="display:none">
-            <input type="hidden" name="_subject" value="Nueva cotización desde justiserv.com">
-            <input type="hidden" name="origen_form" value="cotiza.html">
+            <input type="hidden" name="_subject" value="Nueva cotización desde justiservsa.com">
+            <input type="hidden" name="origen_form" value="cotiza">
 
             <label>Nombre</label>
-            <input name="nombre" required autocomplete="name"
-                   style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0">
+            <input name="nombre" required autocomplete="name" class="form-control" style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0">
 
             <label>Email</label>
-            <input type="email" name="email" required autocomplete="email"
-                   style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0">
+            <input type="email" name="email" required autocomplete="email" class="form-control" style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0">
 
             <div class="row cols-2">
               <div>
                 <label>Origen</label>
-                <input name="origen" required
-                       style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0">
+                <input name="origen" required class="form-control" style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0">
               </div>
               <div>
                 <label>Destino</label>
-                <input name="destino" required
-                       style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0">
+                <input name="destino" required class="form-control" style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0">
               </div>
             </div>
 
             <div class="row cols-2">
               <div>
                 <label>Peso (kg)</label>
-                <input type="number" step="0.1" min="0" name="peso" required
-                       style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0">
+                <input type="number" step="0.1" min="0" name="peso" required class="form-control" style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0">
               </div>
               <div>
                 <label for="tamano">Tamaño</label>
-                <select name="tamano" id="tamano" required
-                        style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0">
+                <select name="tamano" id="tamano" required class="form-control" style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0">
                   <option value="">Seleccione...</option>
                   <option value="20 pies">20 pies</option>
                   <option value="40 pies">40 pies</option>
@@ -141,16 +80,15 @@
             </div>
 
             <label>Detalle</label>
-            <textarea name="detalle" rows="4"
-                      style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0"></textarea>
+            <textarea name="detalle" rows="4" class="form-control" style="width:100%;padding:10px;border:1px solid #dbe6ef;border-radius:10px;margin:8px 0"></textarea>
 
-            <button id="quote-submit" class="btn btn-primary" type="submit">Enviar</button>
+            <button id="quote-submit" class="btn btn-primary" type="submit">Enviar cotización</button>
             <span id="quote-status" class="small" style="margin-left:10px;color:var(--muted)"></span>
           </form>
         </div>
       </div>
 
-      <!-- LADO DERECHO -->
+      <!-- INFO LATERAL -->
       <div class="reveal">
         <div class="card">
           <div class="card-body">
@@ -159,8 +97,8 @@
               <li>Respuesta en minutos.</li>
               <li>Rutas optimizadas y seguro de carga.</li>
               <li>Monitoreo GPS y KPIs de servicio.</li>
-              <li>Certificación BASC.</li>
-              <li>Contamos con Depósito Privado.</li>
+              <li>Certificación BASC y control de calidad.</li>
+              <li>Atención 24/7 en todo Ecuador.</li>
             </ul>
           </div>
         </div>
@@ -169,10 +107,11 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
     <div class="brand" style="display:flex;align-items:center;gap:10px">
-      <img src="assets/img/justiserv-logo.png" width="28" height="28" alt="Logo JUSTISERV">
+      <img src="/assets/img/justiserv-logo.png" width="28" height="28" alt="Logo JUSTISERV" />
       <span>JUSTISERV S.A.</span>
     </div>
     <div class="small">© <span id="year"></span> Todos los derechos reservados.</div>
@@ -182,8 +121,10 @@
 <a class="wa-btn" href="https://wa.me/593982923258" aria-label="WhatsApp">WhatsApp</a>
 
 <!-- JS -->
-<script src="assets/js/main.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
 <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
   const form = document.getElementById('quote-form');
   const statusEl = document.getElementById('quote-status');
   const btn = document.getElementById('quote-submit');
@@ -191,7 +132,10 @@
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
 
       statusEl.textContent = 'Enviando...';
       btn.disabled = true;
@@ -204,43 +148,19 @@
         });
 
         if (res.ok) {
-          statusEl.textContent = 'Enviado. Te contactaremos pronto.';
+          statusEl.textContent = 'Enviado correctamente. Te contactaremos pronto.';
           form.reset();
         } else {
-          const data = await res.json().catch(() => ({}));
-          statusEl.textContent = data?.errors ? 'Error de validación.' : 'Error al enviar. Intenta de nuevo.';
+          statusEl.textContent = 'Error al enviar. Intenta nuevamente.';
         }
-      } catch (_) {
-        statusEl.textContent = 'Error de red. Revisa tu conexión.';
+      } catch {
+        statusEl.textContent = 'Error de red. Verifica tu conexión.';
       } finally {
         btn.disabled = false;
-        setTimeout(() => { statusEl.textContent = ''; }, 6000);
+        setTimeout(() => (statusEl.textContent = ''), 6000);
       }
     });
   }
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList",
- "itemListElement":[
-  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://jehico08.github.io/justiserv/"}
- ]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList",
- "itemListElement":[
-  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://jehico08.github.io/justiserv/"},
-  {"@type":"ListItem","position":2,"name":"Cotiza","item":"https://jehico08.github.io/justiserv/cotiza.html"}
- ]}
-</script>
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
- {"@type":"Question","name":"¿Cuál es la cobertura?","acceptedAnswer":{"@type":"Answer","text":"Cobertura nacional en Ecuador."}},
- {"@type":"Question","name":"¿Tienen seguro de carga?","acceptedAnswer":{"@type":"Answer","text":"Sí, con monitoreo GPS y escolta si aplica."}},
- {"@type":"Question","name":"¿Tiempo de respuesta?","acceptedAnswer":{"@type":"Answer","text":"Respondemos cotizaciones en minutos en horario laboral."}}
-]}
-</script>
-
 </body>
 </html>
-

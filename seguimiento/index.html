@@ -1,27 +1,23 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Seguimiento | JUSTISERV S.A.</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="/assets/img/justiserv-logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <head>
   <meta charset="utf-8" />
-  <base href="/" />
-  ...
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>Seguimiento  | JUSTISERV S.A.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Consulta el estado de tus envíos con JUSTISERV S.A. Seguimiento en línea 24/7 por número de guía." />
   <link rel="icon" href="/assets/img/justiserv-logo.png" />
-</head>
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
 
+<!-- NAV -->
 <header class="navbar">
-  <div class="container" style="display:flex;align-items:center;gap:18px;justify-content:space-between">
+  <div class="container navbar-inner" style="display:flex;align-items:center;gap:18px;justify-content:space-between">
     <a class="navbar-brand" href="/" style="display:flex;align-items:center;gap:10px">
-      <img src="/assets/img/justiserv-logo.png" alt="JUSTISERV S.A." width="52" height="52" style="margin-top:4px;vertical-align:middle;">
+      <img src="/assets/img/justiserv-logo.png" alt="JUSTISERV S.A." width="52" height="52" style="margin-top:4px;vertical-align:middle" />
       <span style="font-weight:900;color:#0b2239">JUSTISERV S.A.</span>
     </a>
     <nav style="display:flex;gap:18px;flex-wrap:wrap">
@@ -35,35 +31,87 @@
   </div>
 </header>
 
+<!-- CONTENIDO -->
 <section class="section">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Inicio</a> · Seguimiento</div>
+    <nav class="breadcrumb" aria-label="Miga de pan">
+      <a href="/">Inicio</a> · <span aria-current="page">Seguimiento</span>
+    </nav>
     <h1 style="color:var(--ink);margin:0 0 20px 0">Seguimiento en línea</h1>
 
     <div class="card" style="max-width:960px;margin:0 auto;box-shadow:var(--shadow)">
       <div class="card-body">
-        <label>Número de guía</label>
-        <input type="text" class="form-control" placeholder="JS-000123456" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:8px 0 12px">
+        <form id="track-form" novalidate>
+          <div style="margin-bottom:12px">
+            <label for="guia" style="display:block;margin-bottom:6px;font-weight:600">Número de guía</label>
+            <input
+              id="guia"
+              name="guia"
+              type="text"
+              inputmode="text"
+              autocomplete="off"
+              placeholder="JS-000123456"
+              aria-describedby="help-guia"
+              class="form-control"
+              style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb"
+            />
+            <small id="help-guia" class="small" style="color:#6b7280">Ingresa el número de guía tal como aparece en tu comprobante.</small>
+          </div>
 
-        <label>Documento (opcional)</label>
-        <input type="text" class="form-control" placeholder="RUC/CI" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:8px 0 16px">
+          <div style="margin-bottom:16px">
+            <label for="doc" style="display:block;margin-bottom:6px;font-weight:600">Documento (opcional)</label>
+            <input
+              id="doc"
+              name="doc"
+              type="text"
+              inputmode="text"
+              autocomplete="off"
+              placeholder="RUC/CI"
+              class="form-control"
+              style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb"
+            />
+          </div>
 
-        <button class="btn btn-primary">Consultar</button>
+          <button type="submit" class="btn btn-primary">Consultar</button>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
-    <div class="brand"><img src="/assets/img/justiserv-logo.png" width="28" height="28"><span>JUSTISERV S.A.</span></div>
+    <div class="brand">
+      <img src="/assets/img/justiserv-logo.png" width="28" height="28" alt="Logo JUSTISERV S.A." />
+      <span>JUSTISERV S.A.</span>
+    </div>
     <div class="small">© <span id="year"></span> Todos los derechos reservados.</div>
   </div>
 </footer>
 
-<a class="wa-btn" href="https://wa.me/593982923258">WhatsApp</a>
+<!-- WhatsApp flotante -->
+<a class="wa-btn" href="https://wa.me/593982923258" aria-label="WhatsApp">WhatsApp</a>
+
+<!-- JS -->
 <script src="/assets/js/main.js" defer></script>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script>
+  // año del footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // (Opcional) Intercepta el submit para futuro uso con API real
+  document.getElementById('track-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const guia = document.getElementById('guia').value.trim();
+    if (!guia) {
+      alert('Por favor ingresa tu número de guía.');
+      document.getElementById('guia').focus();
+      return;
+    }
+    // Aquí podrías redirigir o consultar una API real
+    // Por ahora solo mostramos un aviso
+    alert('Buscando guía: ' + guia + (document.getElementById('doc').value ? ' • Doc: ' + document.getElementById('doc').value.trim() : ''));
+  });
+</script>
 </body>
 </html>
-
