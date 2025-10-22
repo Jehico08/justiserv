@@ -1,6 +1,11 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jehico08.github.io/justiserv/sitemap.xml
+# Sitemap principal
+Sitemap: https://justiservsa.com/sitemap.xml
 
-
+# Info del negocio
+# Ubicación: River Plaza, Av. León Febres Cordero Ribadeneyra, Daule, Ecuador
+# Teléfono: +593 98 292 3258
+# Email: transportes.justiserv.sa@gmail.com
+# Empresa: JUSTISERV S.A.
