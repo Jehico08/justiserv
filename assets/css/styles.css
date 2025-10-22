@@ -198,4 +198,8 @@ footer .brand{display:flex; align-items:center; gap:10px; color:#fff; font-weigh
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,.15);
 }
+.hero-ctas .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+}
 

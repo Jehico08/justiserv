@@ -2,10 +2,10 @@ const CACHE_NAME = "justiserv-cache-v1";
 const urlsToCache = [
   "/justiserv/",
   "/justiserv/index.html",
-  "/justiserv/servicios.html",
-  "/justiserv/seguimiento.html",
-  "/justiserv/cotiza.html",
-  "/justiserv/contacto.html",
+  "/justiserv/servicios/",
+  "/justiserv/seguimiento/",
+  "/justiserv/cotiza/",
+  "/justiserv/contacto/",
   "/justiserv/assets/css/styles.css",
   "/justiserv/assets/js/main.js",
   "/justiserv/assets/img/justiserv-logo.png"
