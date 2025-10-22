@@ -4,90 +4,67 @@
   <meta charset="utf-8">
   <title>Servicios | JUSTISERV S.A.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="assets/img/justiserv-logo.png">
+  <link rel="icon" href="/assets/img/justiserv-logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#0B7BC1">
-<link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#0B7BC1">
+  <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
 
 <!-- NAV -->
 <header class="navbar">
-  <div class="container navbar-inner">
-    <a class="navbar-brand" href="index.html">
-      <img src="assets/img/justiserv-logo.png" alt="JUSTISERV S.A." width="52" height="52">
-      <span>JUSTISERV S.A.</span>
+  <div class="container" style="display:flex;align-items:center;gap:18px;justify-content:space-between">
+    <a class="navbar-brand" href="/" style="display:flex;align-items:center;gap:10px">
+      <img src="/assets/img/justiserv-logo.png" alt="JUSTISERV S.A." width="52" height="52" style="margin-top:4px;vertical-align:middle;">
+      <span style="font-weight:900;color:#0b2239">JUSTISERV S.A.</span>
     </a>
-
-    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
-
-    <nav class="nav">
-      <a class="nav-link" href="index.html">Inicio</a>
-<a class="nav-link" href="/seguimiento/">Seguimiento</a>
-<a class="nav-link" href="/cotiza/">Cotiza</a>
-<a class="nav-link" href="/contacto/">Contacto</a>
-<a class="nav-link" href="/cotiza/">Cotiza ahora</a>
+    <nav style="display:flex;gap:18px;flex-wrap:wrap">
+      <a class="nav-link" href="/">Inicio</a>
+      <a class="nav-link active" href="/servicios/">Servicios</a>
+      <a class="nav-link" href="/seguimiento/">Seguimiento</a>
+      <a class="nav-link" href="/cotiza/">Cotiza</a>
+      <a class="nav-link" href="/contacto/">Contacto</a>
+      <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
     </nav>
   </div>
 </header>
 
-
 <section class="section">
   <div class="container">
-    <div class="breadcrumb"><a href="index.html">Inicio</a> · Servicios</div>
+    <div class="breadcrumb"><a href="/">Inicio</a> · Servicios</div>
     <h1 style="color:var(--ink);margin:0 0 20px 0">Servicios</h1>
 
     <div class="row cols-3">
-      <div class="card reveal"><div class="card-body">
+      <article class="card reveal"><div class="card-body">
         <h3>Carga pesada</h3>
         <p>Plataformas, lowboy y furgones. Carga paletizada, maquinaria y materiales.</p>
         <p class="mb-0"><b>Incluye:</b> Seguro, monitoreo GPS, escolta si aplica.</p>
-      </div></div>
+      </div></article>
 
-      <div class="card reveal"><div class="card-body">
+      <article class="card reveal"><div class="card-body">
         <h3>Courier y última milla</h3>
         <p>Entregas B2C/B2B, POD, rutas programadas, devoluciones claras.</p>
         <p class="mb-0"><b>Integración:</b> Shopify, WooCommerce, API propia.</p>
-      </div></div>
+      </div></article>
 
-      <div class="card reveal"><div class="card-body">
+      <article class="card reveal"><div class="card-body">
         <h3>Logística integral</h3>
         <p>CD, almacenamiento, picking/packing, cross-dock, distribución.</p>
         <p class="mb-0"><b>KPIs:</b> OTIF, fill rate, inventario en línea.</p>
-      </div></div>
+      </div></article>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
-    <div class="brand" style="display:flex;align-items:center;gap:10px">
-      <img src="assets/img/justiserv-logo.png" width="28" height="28" alt="Logo JUSTISERV">
-      <span>JUSTISERV S.A.</span>
-    </div>
+    <div class="brand"><img src="/assets/img/justiserv-logo.png" width="28" height="28" alt=""><span>JUSTISERV S.A.</span></div>
     <div class="small">© <span id="year"></span> Todos los derechos reservados.</div>
   </div>
 </footer>
 
-<a class="wa-btn" href="https://wa.me/593982923258" aria-label="WhatsApp">WhatsApp</a>
-
-<script src="assets/js/main.js" defer></script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList",
- "itemListElement":[
-  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://jehico08.github.io/justiserv/"}
- ]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList",
- "itemListElement":[
-  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://jehico08.github.io/justiserv/"},
-  {"@type":"ListItem","position":2,"name":"Servicios","item":"https://jehico08.github.io/justiserv/servicios.html"}
- ]}
-</script>
-
+<a class="wa-btn" href="https://wa.me/5932923258">WhatsApp</a>
+<script src="/assets/js/main.js" defer></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
+

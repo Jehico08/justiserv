@@ -4,42 +4,78 @@
   <meta charset="utf-8">
   <title>Cotiza | JUSTISERV S.A.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="assets/img/justiserv-logo.png">
+  <link rel="icon" href="/assets/img/justiserv-logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#0B7BC1">
-<!-- Íconos y PWA -->
-<link rel="icon" href="assets/img/justiserv-logo.png">
-<link rel="apple-touch-icon" sizes="192x192" href="assets/img/icon-192.png">
-<link rel="apple-touch-icon" sizes="512x512" href="assets/img/icon-512.png">
-<link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#0B7BC1">
-<link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#0B7BC1">
-
+  <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-<!-- NAV -->
+
 <header class="navbar">
-  <div class="container navbar-inner">
-    <a class="navbar-brand" href="index.html">
-      <img src="assets/img/justiserv-logo.png" alt="JUSTISERV S.A." width="52" height="52">
-      <span>JUSTISERV S.A.</span>
+  <div class="container" style="display:flex;align-items:center;gap:18px;justify-content:space-between">
+    <a class="navbar-brand" href="/" style="display:flex;align-items:center;gap:10px">
+      <img src="/assets/img/justiserv-logo.png" alt="JUSTISERV S.A." width="52" height="52" style="margin-top:4px;vertical-align:middle;">
+      <span style="font-weight:900;color:#0b2239">JUSTISERV S.A.</span>
     </a>
-
-    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
-
-    <nav class="nav">
-      <a class="nav-link" href="index.html">Inicio</a>
-       <a class="nav-link" href="/servicios/">Servicios</a>
-<a class="nav-link" href="/seguimiento/">Seguimiento</a>
-<a class="nav-link" href="/cotiza/">Cotiza</a>
-<a class="nav-link" href="/contacto/">Contacto</a>
-<a class="nav-link" href="/cotiza/">Cotiza ahora</a>
+    <nav style="display:flex;gap:18px;flex-wrap:wrap">
+      <a class="nav-link" href="/">Inicio</a>
+      <a class="nav-link" href="/servicios/">Servicios</a>
+      <a class="nav-link" href="/seguimiento/">Seguimiento</a>
+      <a class="nav-link active" href="/cotiza/">Cotiza</a>
+      <a class="nav-link" href="/contacto/">Contacto</a>
+      <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
     </nav>
   </div>
 </header>
+
+<section class="section">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Inicio</a> · Cotiza</div>
+    <h1 style="color:var(--ink);margin:0 0 20px 0">Cotiza tu envío</h1>
+
+    <form class="card" action="https://formspree.io/f/xanpawvd" method="POST" style="max-width:960px;margin:0 auto;box-shadow:var(--shadow)">
+      <div class="card-body">
+        <label>Nombre</label>
+        <input name="nombre" required class="form-control" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0 12px">
+
+        <label>Email</label>
+        <input type="email" name="email" required class="form-control" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0 12px">
+
+        <label>Origen</label>
+        <input name="origen" class="form-control" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0 12px">
+
+        <label>Destino</label>
+        <input name="destino" class="form-control" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0 12px">
+
+        <label>Peso (kg)</label>
+        <input name="peso" class="form-control" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0 12px">
+
+        <label>Tamaño de la carga</label>
+        <select name="tamano" class="form-control" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0 12px">
+          <option value="20 pies">20 pies</option>
+          <option value="40 pies">40 pies</option>
+        </select>
+
+        <label>Detalle</label>
+        <textarea name="detalle" rows="4" class="form-control" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:6px 0 16px"></textarea>
+
+        <button class="btn btn-primary">Enviar cotización</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
+    <div class="brand"><img src="/assets/img/justiserv-logo.png" width="28" height="28"><span>JUSTISERV S.A.</span></div>
+    <div class="small">© <span id="year"></span> Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<a class="wa-btn" href="https://wa.me/5932923258">WhatsApp</a>
+<script src="/assets/js/main.js" defer></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
 
 <section class="section">

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Seguimiento | JUSTISERV S.A.</title>
+  <title>Contacto | JUSTISERV S.A.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/assets/img/justiserv-logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -19,9 +19,9 @@
     <nav style="display:flex;gap:18px;flex-wrap:wrap">
       <a class="nav-link" href="/">Inicio</a>
       <a class="nav-link" href="/servicios/">Servicios</a>
-      <a class="nav-link active" href="/seguimiento/">Seguimiento</a>
+      <a class="nav-link" href="/seguimiento/">Seguimiento</a>
       <a class="nav-link" href="/cotiza/">Cotiza</a>
-      <a class="nav-link" href="/contacto/">Contacto</a>
+      <a class="nav-link active" href="/contacto/">Contacto</a>
       <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
     </nav>
   </div>
@@ -29,18 +29,26 @@
 
 <section class="section">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Inicio</a> · Seguimiento</div>
-    <h1 style="color:var(--ink);margin:0 0 20px 0">Seguimiento en línea</h1>
+    <div class="breadcrumb"><a href="/">Inicio</a> · Contacto</div>
+    <h1 style="color:var(--ink);margin:0 0 20px 0">Contacto</h1>
 
-    <div class="card" style="max-width:960px;margin:0 auto;box-shadow:var(--shadow)">
-      <div class="card-body">
-        <label>Número de guía</label>
-        <input type="text" class="form-control" placeholder="JS-000123456" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:8px 0 12px">
+    <div class="row cols-2">
+      <div class="card reveal">
+        <div class="card-body">
+          <h3>Datos</h3>
+          <p><b>Tel:</b> +593 292 3258</p>
+          <p><b>Email:</b> <a href="mailto:transportes.justiserv.sa@gmail.com">transportes.justiserv.sa@gmail.com</a></p>
+          <p><b>Dirección:</b> Av. León Febres Cordero Ribadeneyra, Daule 091910</p>
+          <p><b>Horario:</b> Lunes a Domingo, 08:00–18:00</p>
+          <p class="mb-0"><a class="btn btn-primary" href="https://wa.me/5932923258">Escríbenos por WhatsApp</a></p>
+        </div>
+      </div>
 
-        <label>Documento (opcional)</label>
-        <input type="text" class="form-control" placeholder="RUC/CI" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:8px 0 16px">
-
-        <button class="btn btn-primary">Consultar</button>
+      <div class="card reveal">
+        <div class="card-body">
+          <h3>Ubicación</h3>
+          <iframe class="map" src="https://www.openstreetmap.org/export/embed.html?bbox=-79.95%2C-2.08%2C-79.92%2C-2.06&layer=mapnik" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </div>
   </div>
