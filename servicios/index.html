@@ -17,55 +17,39 @@
 
 <header class="navbar">
   <div class="container navbar-inner">
+    <!-- Marca -->
     <a class="navbar-brand" href="/">
-      <img src="/assets/img/justiserv-logo.png" alt="JUSTISERV S.A." width="52" height="52">
+      <img src="/assets/img/justiserv-logo.png" width="52" height="52" alt="JUSTISERV S.A.">
       <span>JUSTISERV S.A.</span>
     </a>
 
-    <!-- navegación horizontal (desktop) -->
-    <nav class="nav desktop-nav">
-      <a class="nav-link" data-page="/" href="/">Inicio</a>
-      <a class="nav-link" data-page="/servicios/" href="/servicios/">Servicios</a>
-      <a class="nav-link" data-page="/seguimiento/" href="/seguimiento/">Seguimiento</a>
-      <a class="nav-link" data-page="/cotiza/" href="/cotiza/">Cotiza</a>
-      <a class="nav-link" data-page="/contacto/" href="/contacto/">Contacto</a>
+    <!-- Botón hamburguesa (solo visible en móvil por CSS) -->
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+    <!-- Menú de escritorio (se oculta en móvil por CSS) -->
+    <nav class="nav nav-desktop">
+      <a class="nav-link" href="/">Inicio</a>
+      <a class="nav-link" href="/servicios/">Servicios</a>
+      <a class="nav-link" href="/seguimiento/">Seguimiento</a>
+      <a class="nav-link" href="/cotiza/">Cotiza</a>
+      <a class="nav-link" href="/contacto/">Contacto</a>
       <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
     </nav>
-
-    <!-- botón hamburguesa (móvil) -->
-    <button id="menuBtn" class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <!-- drawer / overlay (móvil) -->
-  <div id="navDrawer" class="nav-drawer" aria-hidden="true">
-    <div class="drawer-card">
-      <div class="drawer-header">
-        <div class="brand-mini">
-          <img src="/assets/img/justiserv-logo.png" width="40" height="40" alt="">
-          <strong>JUSTISERV S.A.</strong>
-        </div>
-        <button id="menuClose" class="drawer-close" aria-label="Cerrar menú">×</button>
-      </div>
-
-      <nav class="drawer-links">
-        <a class="drawer-link" data-page="/" href="/">Inicio</a>
-        <a class="drawer-link" data-page="/servicios/" href="/servicios/">Servicios</a>
-        <a class="drawer-link" data-page="/seguimiento/" href="/seguimiento/">Seguimiento</a>
-        <a class="drawer-link" data-page="/cotiza/" href="/cotiza/">Cotiza</a>
-        <a class="drawer-link" data-page="/contacto/" href="/contacto/">Contacto</a>
-      </nav>
-
-      <a class="btn btn-primary drawer-cta" href="/cotiza/">Cotiza ahora</a>
-
-      <div class="brand-foot">
-        <img src="/assets/img/justiserv-logo.png" width="28" height="28" alt="">
-        <span>JUSTISERV S.A.</span>
-      </div>
-    </div>
   </div>
 </header>
+
+<!-- (Opcional) Menú móvil tipo “sheet”. Se muestra al pulsar ☰ -->
+<div id="mobileMenu" class="mobile-menu" hidden>
+  <div class="mobile-menu__panel">
+    <button class="mobile-menu__close" aria-label="Cerrar">✕</button>
+    <a href="/">Inicio</a>
+    <a href="/servicios/">Servicios</a>
+    <a href="/seguimiento/">Seguimiento</a>
+    <a href="/cotiza/">Cotiza</a>
+    <a href="/contacto/">Contacto</a>
+    <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
+  </div>
+</div>
 <!-- ===== Sheet / menú móvil ===== -->
 <div id="mobileMenu" class="sheet" hidden>
   <div class="sheet-overlay" data-close></div>

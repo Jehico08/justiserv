@@ -260,3 +260,20 @@ footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:80
 }
 
 /* (resto de estilos del sheet que ya te pasé pueden quedarse igual) */
+/* ————— NAV: visibilidad por breakpoint ————— */
+@media (max-width: 960px) {
+  /* Oculta el menú de escritorio en móvil */
+  .nav-desktop { display: none !important; }
+  .nav-toggle  { display: inline-flex !important; }
+}
+
+/* En escritorio oculta la capa del menú móvil (sheet) si la tienes */
+@media (min-width: 961px) {
+  .mobile-menu { display: none !important; }
+}
+
+/* Si por cualquier motivo hay DOS <header class="navbar"> seguidos,
+   oculta el segundo en móvil (parche de seguridad). */
+@media (max-width: 960px) {
+  .navbar + .navbar { display: none !important; }
+}
