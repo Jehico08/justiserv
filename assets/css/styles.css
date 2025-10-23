@@ -243,3 +243,8 @@ footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:80
 /* Igualar tonos de botones principales */
 .btn-secondary{background:var(--brand);border-color:var(--brand);color:#fff}
 .btn-secondary:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
+.section{padding:64px 0}
+.row{display:grid;gap:24px}
+.row.cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:#fff;border:1px solid #eef2f7;border-radius:16px;box-shadow:var(--shadow)}
+.card .card-body{padding:20px}
