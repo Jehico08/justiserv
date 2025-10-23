@@ -213,3 +213,33 @@ footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:80
 @media (max-width:960px){
   .navbar + .navbar{display:none !important}
 }
+/* ===== Iconos y ajustes visuales para las tarjetas ===== */
+.icon-wrap{display:flex;align-items:center;justify-content:flex-start;margin-bottom:10px}
+.icon-48{width:48px;height:48px;color:var(--brand)}
+.icon-56{width:56px;height:56px;color:#fff}
+
+/* Banda “Confianza y respaldo” */
+.trust-band{
+  background:linear-gradient(135deg,#0B7BC1,#085F96,#053E6B);
+  color:#fff;
+}
+.trust-sub{color:#dbe9f9;margin-top:6px}
+.trust-kpis{align-items:stretch;justify-content:center}
+.trust-item{
+  background:transparent;
+  border:0;
+  padding:18px 10px;
+  text-align:center;
+}
+.trust-icon{
+  display:flex;align-items:center;justify-content:center;
+  width:84px;height:84px;margin:0 auto 8px;
+  border-radius:20px;background:rgba(255,255,255,.1);
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
+}
+.trust-title{font-size:1.6rem;font-weight:800;margin-top:4px}
+.trust-text{font-size:1.2rem;opacity:.95}
+
+/* Igualar tonos de botones principales */
+.btn-secondary{background:var(--brand);border-color:var(--brand);color:#fff}
+.btn-secondary:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
