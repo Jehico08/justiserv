@@ -233,3 +233,25 @@ footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:80
 }
 
 /* (ya tienes estilos .btn y .btn-primary; se reutilizan aquí) */
+/* --- Mostrar/ocultar menús según viewport --- */
+.nav-desktop{display:flex;}
+.nav-toggle{display:none; background:transparent; border:0; font-size:1.6rem; padding:6px 10px;}
+
+@media (max-width:960px){
+  .nav-desktop{display:none;}        /* 🟢 oculta el menú de escritorio en móvil */
+  .nav-toggle{display:inline-block;} /* 🟢 muestra el botón hamburguesa */
+}
+
+/* --- En sheet/móvil marca el activo con subrayado --- */
+.menu-link.is-current{
+  color:var(--brand);
+  text-decoration:underline;
+  text-underline-offset:8px;
+}
+.nav-desktop .nav-link.is-current{
+  color:var(--brand);
+  text-decoration:underline;
+  text-underline-offset:10px;
+}
+
+/* (resto de estilos del sheet que ya te pasé pueden quedarse igual) */

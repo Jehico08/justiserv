@@ -89,5 +89,60 @@ if ('serviceWorker' in navigator) {
   }
   highlightCurrentLinks();
 })();
+// ===== Menú móvil (sheet) + enlace activo =====
+(function () {
+  const toggle = document.querySelector('.nav-toggle');
+  const sheet  = document.getElementById('mobileMenu');
+  if (!toggle || !sheet) return;
+
+  const overlay = sheet.querySelector('.sheet-overlay');
+  const closers = sheet.querySelectorAll('[data-close]');
+
+  const open = () => {
+    sheet.hidden = false;
+    document.body.style.overflow = 'hidden';
+    toggle.setAttribute('aria-expanded', 'true');
+    highlightCurrentLinks();
+  };
+  const close = () => {
+    sheet.hidden = true;
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  toggle.addEventListener('click', open);
+  overlay?.addEventListener('click', close);
+  closers.forEach(el => el.addEventListener('click', close));
+  window.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+
+  // 🔧 Marca activo en desktop y móvil, robusto frente a barras finales y <base>
+  function normPath(p){
+    try {
+      // resuelve relativos con el origin actual
+      const u = new URL(p, location.origin);
+      let s = u.pathname;
+      // quita barra final excepto en "/"
+      if (s.length > 1 && s.endsWith('/')) s = s.slice(0,-1);
+      return s || '/';
+    } catch {
+      return '/';
+    }
+  }
+  function highlightCurrentLinks(){
+    const here = normPath(location.pathname);
+    const links = document.querySelectorAll('.nav-desktop .nav-link, .sheet-nav .menu-link');
+    links.forEach(a => {
+      const href = a.getAttribute('href') || '/';
+      const path = normPath(href);
+      const isCurrent = (path === '/' && here === '/') || (path !== '/' && here.startsWith(path));
+      a.classList.toggle('is-current', isCurrent);
+    });
+  }
+  highlightCurrentLinks();
+
+  // Cierra sheet si el viewport vuelve a escritorio
+  const mql = window.matchMedia('(min-width: 961px)');
+  mql.addEventListener('change', e => { if (e.matches) close(); });
+})();
 
 
