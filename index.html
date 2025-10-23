@@ -2,246 +2,143 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>Transporte de carga pesada en Ecuador | JUSTISERV S.A.</title>
+  <title>Inicio | JUSTISERV S.A.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="JUSTISERV S.A. ofrece transporte de carga pesada, courier y logística integral en Ecuador. Cobertura nacional, seguimiento en línea y atención 24/7." />
-  <meta name="keywords" content="transporte de carga, transporte pesado, courier, logística, transporte Ecuador, fletes, transporte Justiserv, logística integral" />
-  <meta name="author" content="JUSTISERV S.A." />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://justiservsa.com/" />
+  <meta name="description" content="JUSTISERV S.A. ofrece transporte de carga pesada, logística integral y courier con cobertura nacional. Atención 24/7, seguimiento GPS y cotizaciones rápidas." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Transporte de carga pesada en Ecuador | JUSTISERV S.A.">
-  <meta property="og:description" content="Transporte seguro y confiable en Ecuador. Courier, logística y carga pesada con seguimiento en línea.">
-  <meta property="og:image" content="https://justiservsa.com/assets/img/camion2.jpeg">
-  <meta property="og:url" content="https://justiservsa.com/">
-  <meta property="og:type" content="website">
-
-  <!-- PWA / Icons -->
-  <link rel="manifest" href="/manifest.webmanifest" />
-  <meta name="theme-color" content="#0B7BC1" />
   <link rel="icon" href="/assets/img/justiserv-logo.png" />
-  <link rel="apple-touch-icon" sizes="192x192" href="/assets/img/icon-192.png" />
-  <link rel="apple-touch-icon" sizes="512x512" href="/assets/img/icon-512.png" />
-
-  <!-- Fuentes e íconos -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- CSS del sitio -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
-  <!-- Animación leve -->
+  <!-- Fix SOLO para menú móvil del inicio -->
   <style>
-    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
-    .fade-item{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
-    .fade-show{opacity:1;transform:none;animation:fadeUp .8s ease forwards}
-
-    /* ====== estilos mínimos del sheet (puedes moverlos a assets/css/styles.css) ====== */
-    .nav-toggle{display:none}
-    @media (max-width:960px){
-      .nav-desktop{display:none !important;}
-      .nav-toggle{display:inline-flex;align-items:center;justify-content:center;
-        width:40px;height:40px;border:0;border-radius:10px;background:#eaf5fd;color:#0b3657;font-size:20px}
-    }
-    .sheet{position:fixed;inset:0;z-index:1200}
-    .sheet[hidden]{display:none}
-    .sheet-overlay{position:absolute;inset:0;background:rgba(10,16,28,.45);backdrop-filter:blur(2px)}
-    .sheet-panel{position:absolute;left:0;top:0;bottom:0;width:min(92vw,420px);background:#fff;
-      display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.25);border-radius:0 16px 16px 0}
-    .sheet-header{display:flex;align-items:center;justify-content:space-between;gap:10px;
-      padding:16px;border-bottom:1px solid #eef2f7}
-    .sheet-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#0b2239}
-    .sheet-close{border:0;background:#eef5fb;width:36px;height:36px;border-radius:10px;font-size:18px}
-    .sheet-nav{display:flex;flex-direction:column;padding:12px}
-    .sheet-nav a{padding:14px 12px;font-weight:800;text-decoration:none;color:#0b2239;border-radius:10px}
-    .sheet-nav a:hover{background:#f3f8fe}
-    .sheet-nav .menu-cta{margin-top:10px;text-align:center}
-    .sheet-footer{margin-top:auto;display:flex;align-items:center;gap:8px;padding:14px 16px;color:#334155}
-    /* Evita cualquier duplicado de header por si acaso */
-    header.navbar + header.navbar, header.navbar ~ header.navbar{display:none!important}
+  .sheet-panel{
+    position:absolute;
+    inset-inline:0;
+    margin-inline:auto;
+    bottom:0;
+    width:clamp(320px,92vw,560px);
+    max-height:88vh;
+    overflow:auto;
+    background:#fff;
+    border-radius:22px 22px 0 0;
+    box-shadow:0 -20px 60px rgba(0,0,0,.35);
+    padding:14px 16px calc(22px + env(safe-area-inset-bottom));
+    transform:none;
+    left:auto;
+    padding-left:max(16px,env(safe-area-inset-left));
+    padding-right:max(16px,env(safe-area-inset-right));
+  }
   </style>
-
-  <!-- JSON-LD: LocalBusiness / FAQ / Breadcrumb / Organization / Website -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"JUSTISERV S.A.","image":"https://justiservsa.com/assets/img/justiserv-logo.png","@id":"https://justiservsa.com/","url":"https://justiservsa.com/","telephone":"+593982923258","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"Av. León Febres Cordero Ribadeneyra","addressLocality":"Daule","addressRegion":"Guayas","postalCode":"091910","addressCountry":"EC"},"geo":{"@type":"GeoCoordinates","latitude":-2.0705,"longitude":-79.9355},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"18:00"}],"sameAs":["https://www.instagram.com/justiserv.ec?igsh=cWYzeXZlNHZneWsz","https://wa.me/5932923258"],"description":"JUSTISERV S.A. ofrece transporte de carga pesada, logística integral y courier con cobertura nacional. Ubicados en Daule, Guayas."}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Dónde se encuentra ubicada JUSTISERV S.A.?","acceptedAnswer":{"@type":"Answer","text":"Estamos en Av. León Febres Cordero Ribadeneyra, Daule, Guayas. Atención de lunes a domingo de 08:00 a 18:00."}},{"@type":"Question","name":"¿Qué servicios ofrecen?","acceptedAnswer":{"@type":"Answer","text":"Transporte de carga pesada, courier y logística integral para empresas y particulares."}},{"@type":"Question","name":"¿Tienen cobertura nacional?","acceptedAnswer":{"@type":"Answer","text":"Sí, cobertura nacional en Ecuador con monitoreo GPS en tiempo real."}},{"@type":"Question","name":"¿Cómo solicito una cotización?","acceptedAnswer":{"@type":"Answer","text":"Ingresa a la página 'Cotiza' o escríbenos por WhatsApp al +593 292 3258."}}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://justiservsa.com/"},{"@type":"ListItem","position":2,"name":"Servicios","item":"https://justiservsa.com/servicios/"},{"@type":"ListItem","position":3,"name":"Contacto","item":"https://justiservsa.com/contacto/"}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"JUSTISERV S.A.","alternateName":"Justiserv Transporte y Logística","url":"https://justiservsa.com/","logo":"https://justiservsa.com/assets/img/justiserv-logo.png","description":"Empresa ecuatoriana de transporte de carga pesada, logística integral y courier nacional con sede en Daule, Guayas.","email":"transportes.justiserv.sa@gmail.com","telephone":"+593982923258","address":{"@type":"PostalAddress","streetAddress":"Av. León Febres Cordero Ribadeneyra","addressLocality":"Daule","addressRegion":"Guayas","postalCode":"091910","addressCountry":"EC"},"sameAs":["https://www.instagram.com/justiserv.ec?igsh=cWYzeXZlNHZneWsz","https://wa.me/5932923258"],"contactPoint":[{"@type":"ContactPoint","telephone":"+5932923258","contactType":"Customer Service","areaServed":"EC","availableLanguage":["Spanish"]}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"JUSTISERV S.A.","alternateName":"Transporte y Logística en Ecuador","url":"https://justiservsa.com/","potentialAction":{"@type":"SearchAction","target":"https://justiservsa.com/servicios/?q={search_term_string}","query-input":"required name=search_term_string"},"publisher":{"@type":"Organization","name":"JUSTISERV S.A.","logo":{"@type":"ImageObject","url":"https://justiservsa.com/assets/img/justiserv-logo.png"}},"inLanguage":"es"}</script>
 </head>
 
-<body id="top">
-  <!-- NAVBAR (única) -->
-  <header class="navbar">
-    <div class="container navbar-inner">
-      <a class="navbar-brand" href="/">
-        <img src="/assets/img/justiserv-logo.png" width="52" height="52" alt="JUSTISERV S.A.">
-        <span>JUSTISERV S.A.</span>
+<body>
+
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a class="navbar-brand" href="/">
+      <img src="/assets/img/justiserv-logo.png" width="52" height="52" alt="JUSTISERV S.A.">
+      <span>JUSTISERV S.A.</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+    <nav class="nav nav-desktop">
+      <a class="nav-link" href="/">Inicio</a>
+      <a class="nav-link" href="/servicios/">Servicios</a>
+      <a class="nav-link" href="/seguimiento/">Seguimiento</a>
+      <a class="nav-link" href="/cotiza/">Cotiza</a>
+      <a class="nav-link" href="/contacto/">Contacto</a>
+      <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Menú móvil tipo sheet ===== -->
+<div id="mobileMenu" class="sheet" hidden>
+  <div class="sheet-overlay" data-close></div>
+
+  <div class="sheet-panel">
+    <div class="sheet-header">
+      <a class="sheet-brand" href="/">
+        <img src="/assets/img/justiserv-logo.png" width="32" height="32" alt="">
+        <strong>JUSTISERV S.A.</strong>
       </a>
-
-      <!-- Botón hamburguesa (móvil) -->
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-
-      <!-- Menú escritorio -->
-      <nav class="nav nav-desktop">
-        <a class="nav-link" href="/">Inicio</a>
-        <a class="nav-link" href="/servicios/">Servicios</a>
-        <a class="nav-link" href="/seguimiento/">Seguimiento</a>
-        <a class="nav-link" href="/cotiza/">Cotiza</a>
-        <a class="nav-link" href="/contacto/">Contacto</a>
-        <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
-      </nav>
+      <button class="sheet-close" aria-label="Cerrar" data-close>✕</button>
     </div>
-  </header>
 
-  <!-- SHEET: único menú móvil -->
-  <div id="mobileMenu" class="sheet" hidden>
-    <div class="sheet-overlay" data-close></div>
+    <nav class="sheet-nav">
+      <a class="menu-link" href="/">Inicio</a>
+      <a class="menu-link" href="/servicios/">Servicios</a>
+      <a class="menu-link" href="/seguimiento/">Seguimiento</a>
+      <a class="menu-link" href="/cotiza/">Cotiza</a>
+      <a class="menu-link" href="/contacto/">Contacto</a>
+      <a class="btn btn-primary menu-cta" href="/cotiza/">Cotiza ahora</a>
+    </nav>
 
-    <div class="sheet-panel">
-      <div class="sheet-header">
-        <a class="sheet-brand" href="/">
-          <img src="/assets/img/justiserv-logo.png" width="32" height="32" alt="">
-          <strong>JUSTISERV S.A.</strong>
-        </a>
-        <button class="sheet-close" aria-label="Cerrar" data-close>✕</button>
-      </div>
-
-      <nav class="sheet-nav">
-        <a class="menu-link" href="/">Inicio</a>
-        <a class="menu-link" href="/servicios/">Servicios</a>
-        <a class="menu-link" href="/seguimiento/">Seguimiento</a>
-        <a class="menu-link" href="/cotiza/">Cotiza</a>
-        <a class="menu-link" href="/contacto/">Contacto</a>
-        <a class="btn btn-primary menu-cta" href="/cotiza/">Cotiza ahora</a>
-      </nav>
-
-      <div class="sheet-footer">
-        <img src="/assets/img/justiserv-logo.png" width="24" height="24" alt="">
-        <span>JUSTISERV S.A.</span>
-      </div>
+    <div class="sheet-footer">
+      <img src="/assets/img/justiserv-logo.png" width="24" height="24" alt="">
+      <span>JUSTISERV S.A.</span>
     </div>
   </div>
+</div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <span class="pill">Cobertura nacional</span>
-        <h1>Transporte de carga y logística</h1>
-        <p>Carga pesada, courier y logística integral. Seguimiento en línea. Atención 24/7.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="/cotiza/">Cotizar envío</a>
-          <a class="btn btn-secondary" href="/servicios/">Ver servicios</a>
-        </div>
-        <div class="stats" aria-label="Indicadores de servicio">
-          <div class="stat"><strong>98.7%</strong><span>Entregas a tiempo</span></div>
-          <div class="stat"><strong>500+</strong><span>Clientes satisfechos</span></div>
-          <div class="stat"><strong>ISO 9001</strong><span>Calidad certificada</span></div>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="pill">Transporte y logística integral</span>
+      <h1>Soluciones confiables para tus envíos en todo Ecuador</h1>
+      <p>Operamos con flota moderna, seguimiento GPS y personal especializado. Garantizamos seguridad, puntualidad y servicio 24/7.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="/cotiza/">Cotiza tu envío</a>
+        <a class="btn btn-outline" href="/servicios/">Ver servicios</a>
       </div>
-
-      <div class="hero-media">
-        <picture>
-          <source srcset="/assets/img/camion2.jpeg" type="image/jpeg">
-          <img src="/assets/img/camion2.jpeg" alt="Camión de transporte JUSTISERV S.A." width="960" height="640" loading="eager" decoding="async">
-        </picture>
+      <div class="stats">
+        <div class="stat"><strong>98.7%</strong><span>Entregas a tiempo</span></div>
+        <div class="stat"><strong>500+</strong><span>Clientes satisfechos</span></div>
+        <div class="stat"><strong>24/7</strong><span>Atención disponible</span></div>
       </div>
     </div>
-  </section>
 
-  <!-- SERVICIOS -->
-  <section class="section">
-    <div class="container">
-      <h2 class="center" style="margin:0 0 24px 0">Qué hacemos</h2>
-      <div class="row cols-3">
-        <article class="card reveal"><div class="card-body">
-          <h3>Carga pesada</h3><p>Plataformas y furgones, rutas nacionales, seguro de carga.</p>
-        </div></article>
-        <article class="card reveal"><div class="card-body">
-          <h3>Courier y última milla</h3><p>Entregas urbanas y nacionales para e-commerce. POD y devoluciones.</p>
-        </div></article>
-        <article class="card reveal"><div class="card-body">
-          <h3>Logística integral</h3><p>Almacenamiento, picking y distribución. KPIs y reportes.</p>
-        </div></article>
-      </div>
+    <div class="hero-media">
+      <img src="/assets/img/hero-truck.jpg" alt="Camión de transporte JUSTISERV S.A.">
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONFIANZA -->
-  <section class="section" style="background:linear-gradient(135deg,#0B7BC1,#085F96,#053E6B);color:#fff;">
-    <div class="container center reveal">
-      <h2>Confianza y respaldo</h2>
-      <p style="color:#dbe9f9;">Certificaciones y tecnología que garantizan seguridad y calidad.</p>
-      <div class="row cols-3 mt-3" style="align-items:center;justify-content:center;font-size:2.2rem;">
-        <div class="fade-item"><i class="fa-solid fa-certificate"></i><p class="mt-2"><strong>ISO 9001</strong><br>Gestión de calidad</p></div>
-        <div class="fade-item"><i class="fa-solid fa-shield-halved"></i><p class="mt-2"><strong>BASC</strong><br>Seguridad en comercio</p></div>
-        <div class="fade-item"><i class="fa-solid fa-location-dot"></i><p class="mt-2"><strong>GPS 24/7</strong><br>Monitoreo satelital</p></div>
-      </div>
+<!-- SECCIÓN SERVICIOS -->
+<section class="section alt">
+  <div class="container center reveal">
+    <h2>¿Por qué elegirnos?</h2>
+    <p style="max-width:700px;margin:0 auto 24px auto;color:#334155">
+      En <b>JUSTISERV S.A.</b> nos especializamos en transporte de carga pesada, courier y soluciones logísticas personalizadas con monitoreo en tiempo real.
+    </p>
+    <div class="row cols-3">
+      <div class="kpi"><b>100%</b><br><span>Seguridad garantizada</span></div>
+      <div class="kpi"><b>+15</b><br><span>Años de experiencia</span></div>
+      <div class="kpi"><b>ISO 9001</b><br><span>Certificación de calidad</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section class="section alt">
-    <div class="container center reveal">
-      <h2>¿Listo para enviar?</h2>
-      <p class="mt-2">Cotiza tu envío y recibe respuesta en minutos.</p>
-      <a class="btn btn-primary mt-2" href="/cotiza/">Cotizar ahora</a>
+<!-- FOOTER -->
+<footer>
+  <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
+    <div class="brand" style="display:flex;align-items:center;gap:10px">
+      <img src="/assets/img/justiserv-logo.png" width="28" height="28" alt="Logo JUSTISERV" />
+      <span>JUSTISERV S.A.</span>
     </div>
-  </section>
+    <div class="small">©️ <span id="year"></span> Todos los derechos reservados.</div>
+  </div>
+</footer>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
-      <div class="brand" style="display:flex;align-items:center;gap:10px">
-        <img src="/assets/img/justiserv-logo.png" width="40" height="40" alt="Logo Justiserv">
-        <span>JUSTISERV S.A.</span>
-      </div>
-      <small class="small">©️ <span id="year"></span> Todos los derechos reservados.</small>
-    </div>
-  </footer>
+<!-- BOTÓN WHATSAPP -->
+<a class="wa-btn" href="https://wa.me/593982923258" aria-label="WhatsApp">WhatsApp</a>
 
-  <!-- WhatsApp -->
-  <a class="wa-btn" href="https://wa.me/593982923258?text=Hola,%20quiero%20una%20cotizaci%C3%B3n" aria-label="WhatsApp">WhatsApp</a>
-
-  <!-- JS -->
-  <script src="/assets/js/main.js" defer></script>
-  <script>
-    // año del footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // animación fade-up
-    document.addEventListener('scroll', () => {
-      document.querySelectorAll('.fade-item').forEach(el => {
-        const r = el.getBoundingClientRect();
-        if (r.top < innerHeight - 100) el.classList.add('fade-show');
-      });
-    });
-
-    // === Sheet móvil ===
-    const toggle = document.querySelector('.nav-toggle');
-    const sheet  = document.getElementById('mobileMenu');
-    const closeBtns = sheet?.querySelectorAll('[data-close]');
-
-    toggle?.addEventListener('click', () => {
-      sheet.hidden = false;
-      toggle.setAttribute('aria-expanded','true');
-      document.body.style.overflow = 'hidden';
-    });
-    closeBtns?.forEach(btn => btn.addEventListener('click', () => {
-      sheet.hidden = true;
-      toggle.setAttribute('aria-expanded','false');
-      document.body.style.overflow = '';
-    }));
-    sheet?.addEventListener('click', (e) => {
-      if (e.target.classList.contains('sheet-overlay')) {
-        sheet.hidden = true;
-        toggle.setAttribute('aria-expanded','false');
-        document.body.style.overflow = '';
-      }
-    });
-  </script>
+<!-- JS -->
+<script src="/assets/js/main.js" defer></script>
 </body>
 </html>
