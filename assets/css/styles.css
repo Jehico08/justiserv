@@ -65,6 +65,8 @@ body{
 .btn-secondary:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
 .btn-outline{background:transparent;border-color:#cfe8f8;color:#0b3657}
 .btn-outline:hover{border-color:var(--brand);color:var(--brand)}
+
+/* Tamaño y realce de CTAs en hero */
 .hero-ctas .btn{
   padding:16px 34px;font-size:1.08rem;border-radius:16px;
   box-shadow:0 4px 12px rgba(0,0,0,.15)
@@ -78,7 +80,9 @@ body{
   background:radial-gradient(1200px 600px at 20% 10%, #0b66a3 0%, #095688 45%, #084a76 100%);
   color:#fff;padding:56px 0 48px;
 }
-.hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;gap:40px}
+.hero-grid{
+  display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;gap:40px
+}
 .pill{
   display:inline-block;background:rgba(255,255,255,.12);color:#e9f3fb;
   padding:8px 14px;border-radius:999px;font-size:14px;letter-spacing:.2px
@@ -86,6 +90,8 @@ body{
 .hero-copy h1{font-size:clamp(32px,5vw,56px);line-height:1.05;margin:10px 0 12px}
 .hero-copy p{margin:0 0 18px;color:#d7e7f6;max-width:640px}
 .hero-ctas{display:flex;gap:12px;margin-bottom:18px}
+
+/* KPIs */
 .stats{display:flex;gap:18px;flex-wrap:wrap}
 .stat{
   background:#fff;color:#0b2239;border-radius:16px;padding:16px 22px;
@@ -94,11 +100,23 @@ body{
 }
 .stat strong{font-size:20px;color:var(--brand-ink)}
 .stat span{font-size:.95rem;color:#334155}
+
+/* Imagen del héroe — no recortar */
+/* FIX: usar contain para evitar recortes y limitar alto en desktop */
 .hero-media{justify-self:end;max-width:560px;width:100%}
-.hero-media img{display:block;width:100%;border-radius:16px;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.hero-media picture,.hero-media img{
+  display:block;width:100%;
+  height:auto;                 /* clave para no distorsionar */
+  object-fit:contain;          /* 👈 no recorta la imagen */
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25)
+}
+@media (min-width:1025px){
+  .hero-media img{max-height:520px;} /* límite visual en escritorio */
+}
 
 /* =======================
-   SECCIONES / TARJETAS
+   SECCIONES / TARJETAS / GRID
 ======================= */
 .section{padding:64px 0}
 .section.alt{background:var(--bg-soft)}
@@ -109,6 +127,49 @@ body{
 .card .card-body{padding:20px}
 .card h3{margin:0 0 .5rem 0;color:var(--brand-ink)}
 .card p{margin:.25rem 0;color:#334155}
+
+/* =======================
+   MENÚ MÓVIL (SHEET)
+======================= */
+.sheet[hidden]{display:none!important} /* 👈 asegura que no bloquee clics */
+.sheet{
+  position:fixed; inset:0; z-index:1200;
+  display:flex; align-items:flex-end; justify-content:center;
+  background:transparent;
+}
+.sheet-overlay{
+  position:absolute; inset:0;
+  background:rgba(4,17,29,.55); backdrop-filter:blur(2px);
+}
+.sheet-panel{
+  position:relative;
+  width:min(640px,92%);
+  max-height:88vh; overflow:auto;
+  background:#fff; border-radius:22px 22px 0 0;
+  box-shadow:0 -20px 60px rgba(0,0,0,.35);
+  padding:14px 16px 22px;
+  margin-bottom:env(safe-area-inset-bottom, 0);
+}
+.sheet-header{display:flex;align-items:center;justify-content:space-between;padding:4px 2px 10px;border-bottom:1px solid var(--line)}
+.sheet-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#0b2239}
+.sheet-close{
+  background:#f1f5f9;border:1px solid #e5e7eb;border-radius:12px;
+  padding:6px 10px;font-size:1.2rem;cursor:pointer
+}
+.sheet-close:hover{background:#e9eef5}
+.sheet-nav{display:flex;flex-direction:column;gap:16px;padding:16px 6px}
+.menu-link{
+  display:block;text-align:center;text-decoration:none;color:#1f2937;
+  font-weight:800;font-size:1.3rem;padding:10px 6px
+}
+.menu-link.is-current{color:var(--brand);text-decoration:underline;text-underline-offset:8px}
+.menu-cta{width:100%;margin-top:6px;padding:16px;font-size:1.05rem;border-radius:14px}
+.sheet-footer{display:flex;align-items:center;gap:8px;padding:10px 6px 2px;color:#475569;font-weight:700}
+
+/* Ocultar sheet en escritorio (previene superposición accidental) */
+@media (min-width:961px){
+  #mobileMenu{display:none!important;}
+}
 
 /* =======================
    FOOTER
@@ -127,48 +188,10 @@ footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:80
 .wa-btn:hover{opacity:.9}
 
 /* =======================
-   MENÚ MÓVIL (SHEET)
+   ANIMACIONES SUAVES
 ======================= */
-.sheet[hidden]{display:none!important;}
-.sheet{
-  position:fixed; inset:0; z-index:1200;
-  display:none;
-  align-items:flex-end; justify-content:center;
-  background:transparent;
-}
-body.menu-open .sheet{ display:flex; }
-
-.sheet-overlay{
-  position:absolute; inset:0;
-  background:rgba(4,17,29,.55); backdrop-filter:blur(2px);
-}
-.sheet-panel{
-  position:relative;
-  width:min(640px,92%);
-  max-height:88vh; overflow:auto;
-  background:#fff; border-radius:22px 22px 0 0;
-  box-shadow:0 -20px 60px rgba(0,0,0,.35);
-  padding:14px 16px 22px;
-  margin-bottom:env(safe-area-inset-bottom, 0);
-}
-.sheet-header{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:4px 2px 10px;border-bottom:1px solid var(--line)
-}
-.sheet-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#0b2239}
-.sheet-close{
-  background:#f1f5f9;border:1px solid #e5e7eb;border-radius:12px;
-  padding:6px 10px;font-size:1.2rem;cursor:pointer
-}
-.sheet-close:hover{background:#e9eef5}
-.sheet-nav{display:flex;flex-direction:column;gap:16px;padding:16px 6px}
-.menu-link{
-  display:block;text-align:center;text-decoration:none;color:#1f2937;
-  font-weight:800;font-size:1.4rem;padding:10px 6px
-}
-.menu-link.is-current{color:var(--brand);text-decoration:underline;text-underline-offset:8px}
-.menu-cta{width:100%;margin-top:6px;padding:16px;font-size:1.05rem;border-radius:14px}
-.sheet-footer{display:flex;align-items:center;gap:8px;padding:10px 6px 2px;color:#475569;font-weight:700}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+.reveal.show{opacity:1;transform:none}
 
 /* =======================
    RESPONSIVE
@@ -178,124 +201,28 @@ body.menu-open .sheet{ display:flex; }
   .hero-media{justify-self:center;max-width:680px;order:1}
 }
 @media (max-width:960px){
-  .nav-desktop{display:none!important}
-  .nav-toggle{display:inline-block!important}
+  .nav-desktop{display:none !important}
+  .nav-toggle{display:inline-block !important}
 }
 @media (max-width:640px){
   .btn{padding:10px 14px}
   .stat{min-width:unset;width:100%}
 }
 
-/* =======================
-   CONFIANZA / TARJETAS
-======================= */
-.icon-wrap{display:flex;align-items:center;justify-content:flex-start;margin-bottom:10px}
-.icon-48{width:48px;height:48px;color:var(--brand)}
-.icon-56{width:56px;height:56px;color:#fff}
-.trust-band{background:linear-gradient(135deg,#0B7BC1,#085F96,#053E6B);color:#fff;}
-.trust-sub{color:#dbe9f9;margin-top:6px}
-.trust-item{background:transparent;border:0;padding:18px 10px;text-align:center;}
-.trust-icon{display:flex;align-items:center;justify-content:center;width:84px;height:84px;margin:0 auto 8px;border-radius:20px;background:rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.12);}
-.trust-title{font-size:1.6rem;font-weight:800;margin-top:4px}
-.trust-text{font-size:1.2rem;opacity:.95}
+/* Parche: si por error hay dos headers seguidos, oculta el segundo en móvil */
 @media (max-width:960px){
-  .navbar .nav-desktop{
-    display:none!important;
-  }
-}/* 🧩 Corrección final: ocultar menú móvil en escritorio */
-@media (min-width:961px){
-  #mobileMenu { display:none!important; }
-}
-/* =======================
-   FIX FINAL — Mobile y tarjetas
-======================= */
-
-/* Menú desktop oculto en móvil */
-@media (max-width:960px){
-  .navbar .nav-desktop{display:none!important;}
+  .navbar + .navbar{display:none !important}
 }
 
-/* Menú móvil oculto en escritorio */
-@media (min-width:961px){
-  #mobileMenu {display:none!important;}
+/* ===== “Confianza y respaldo” ===== */
+.trust{
+  background:linear-gradient(135deg,#0B7BC1,#085F96,#053E6B);
+  color:#fff;
 }
-
-/* Ajuste de tarjetas de “Confianza y respaldo” */
-.section .card {
-  transition: transform .2s ease, box-shadow .2s ease;
+.trust-sub{color:#dbe9f9;margin:0 0 18px 0}
+.trust-kpis{align-items:stretch;justify-content:center}
+.trust-item{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.18);
 }
-.section .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0,0,0,.15);
-}
-.section .card svg.icon {
-  width: 42px;
-  height: 42px;
-  stroke-width: 1.6;
-  margin-right: 10px;
-}
-
-/* Asegurar tamaños proporcionados en escritorio */
-@media (min-width:1024px){
-  .row.cols-3 .card-body {
-    padding: 24px;
-  }
-  .section .card svg.icon {
-    width: 36px;
-    height: 36px;
-  }
-}
-
-/* Ajustes en móvil */
-@media (max-width:640px){
-  .sheet-panel{
-    width:95vw!important;
-    max-width:520px!important;
-  }
-  .section .card svg.icon{
-    width:32px;
-    height:32px;
-  }
-  .menu-link{
-    font-size:1.2rem!important;
-  }
-}
-/* ===== FIX: imagen de héroe sin recorte ===== */
-.hero-media{
-  justify-self:end;
-  max-width: 640px;          /* un poco más ancha en desktop */
-  width:100%;
-}
-
-.hero-media picture,
-.hero-media img{
-  display:block;
-  width:100%;
-  height:auto;               /* altura automática */
-  object-fit: contain !important; /* muestra la imagen completa */
-  background: #0b3657;       /* color de fondo detrás si sobra espacio */
-  border-radius:16px;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
-  max-height: 520px;         /* evita que sea gigante en desktop */
-}
-
-/* En pantallas pequeñas deja crecer la altura si hace falta */
-@media (max-width:1024px){
-  .hero-media{ max-width:680px; }
-  .hero-media picture,
-  .hero-media img{ max-height:none; }
-}
-
-/* ===== Ajuste de tamaño del menú móvil (se veía grande) ===== */
-.sheet-panel{
-  max-width: 520px !important;
-  padding: 12px 14px 18px !important;
-  border-radius:18px 18px 0 0 !important;
-}
-
-.menu-link{
-  font-size: 1.15rem !important;
-  padding: 8px 6px !important;
-}
-
-.menu-cta{ padding: 14px !important; font-size: 1rem !important; }
+.trust-icon-svg{width:56px;height:56px;flex:0 0 auto}  /* 👈 tamaño contenido */
