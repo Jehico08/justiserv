@@ -2,49 +2,50 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>Inicio | JUSTISERV S.A.</title>
+  <title>Transporte de carga pesada en Ecuador | JUSTISERV S.A.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="JUSTISERV S.A. ofrece transporte de carga pesada, logística integral y courier con cobertura nacional. Atención 24/7, seguimiento GPS y cotizaciones rápidas." />
+  <meta name="description" content="JUSTISERV S.A. ofrece transporte de carga pesada, courier y logística integral en Ecuador. Cobertura nacional, seguimiento en línea y atención 24/7." />
+  <meta name="keywords" content="transporte de carga, transporte pesado, courier, logística, transporte Ecuador, fletes, transporte Justiserv, logística integral" />
+  <meta name="author" content="JUSTISERV S.A." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://justiservsa.com/" />
 
+  <!-- Icono -->
   <link rel="icon" href="/assets/img/justiserv-logo.png" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
-  <!-- Fix SOLO para menú móvil del inicio -->
+  <!-- FIX: centrado menú móvil solo en inicio -->
   <style>
-  .sheet-panel{
-    position:absolute;
-    inset-inline:0;
-    margin-inline:auto;
-    bottom:0;
-    width:clamp(320px,92vw,560px);
-    max-height:88vh;
-    overflow:auto;
-    background:#fff;
-    border-radius:22px 22px 0 0;
-    box-shadow:0 -20px 60px rgba(0,0,0,.35);
-    padding:14px 16px calc(22px + env(safe-area-inset-bottom));
-    transform:none;
-    left:auto;
-    padding-left:max(16px,env(safe-area-inset-left));
-    padding-right:max(16px,env(safe-area-inset-right));
-  }
+    .sheet-panel{
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      right:auto;
+      bottom:0;
+      width:min(560px, 92vw);
+      max-height:88vh;
+      overflow:auto;
+      background:#fff;
+      border-radius:22px 22px 0 0;
+      box-shadow:0 -20px 60px rgba(0,0,0,.35);
+      padding:14px 16px calc(22px + env(safe-area-inset-bottom));
+      padding-left:max(16px,env(safe-area-inset-left));
+      padding-right:max(16px,env(safe-area-inset-right));
+    }
   </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <header class="navbar">
   <div class="container navbar-inner">
     <a class="navbar-brand" href="/">
       <img src="/assets/img/justiserv-logo.png" width="52" height="52" alt="JUSTISERV S.A.">
       <span>JUSTISERV S.A.</span>
     </a>
-
     <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-
     <nav class="nav nav-desktop">
       <a class="nav-link" href="/">Inicio</a>
       <a class="nav-link" href="/servicios/">Servicios</a>
@@ -56,10 +57,9 @@
   </div>
 </header>
 
-<!-- ===== Menú móvil tipo sheet ===== -->
+<!-- MENÚ MÓVIL -->
 <div id="mobileMenu" class="sheet" hidden>
   <div class="sheet-overlay" data-close></div>
-
   <div class="sheet-panel">
     <div class="sheet-header">
       <a class="sheet-brand" href="/">
@@ -94,7 +94,7 @@
       <p>Operamos con flota moderna, seguimiento GPS y personal especializado. Garantizamos seguridad, puntualidad y servicio 24/7.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="/cotiza/">Cotiza tu envío</a>
-        <a class="btn btn-outline" href="/servicios/">Ver servicios</a>
+        <a class="btn btn-secondary" href="/servicios/">Ver servicios</a>
       </div>
       <div class="stats">
         <div class="stat"><strong>98.7%</strong><span>Entregas a tiempo</span></div>
@@ -104,12 +104,12 @@
     </div>
 
     <div class="hero-media">
-      <img src="/assets/img/hero-truck.jpg" alt="Camión de transporte JUSTISERV S.A.">
+      <img src="/assets/img/camion2.jpeg" alt="Camión de transporte JUSTISERV S.A." width="960" height="640" loading="eager" decoding="async">
     </div>
   </div>
 </section>
 
-<!-- SECCIÓN SERVICIOS -->
+<!-- SERVICIOS -->
 <section class="section alt">
   <div class="container center reveal">
     <h2>¿Por qué elegirnos?</h2>
@@ -135,10 +135,13 @@
   </div>
 </footer>
 
-<!-- BOTÓN WHATSAPP -->
-<a class="wa-btn" href="https://wa.me/593982923258" aria-label="WhatsApp">WhatsApp</a>
+<!-- WHATSAPP -->
+<a class="wa-btn" href="https://wa.me/593982923258?text=Hola,%20necesito%20una%20cotización" aria-label="WhatsApp">WhatsApp</a>
 
 <!-- JS -->
 <script src="/assets/js/main.js" defer></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
