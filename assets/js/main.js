@@ -45,5 +45,49 @@ if ('serviceWorker' in navigator) {
       .catch(err => console.error('Error SW:', err));
   });
 }
+// ===== Menú móvil (sheet) =====
+(function () {
+  const toggle = document.querySelector('.nav-toggle');
+  const sheet  = document.getElementById('mobileMenu');
+  if (!toggle || !sheet) return;
+
+  const overlay = sheet.querySelector('.sheet-overlay');
+  const closers = sheet.querySelectorAll('[data-close]');
+
+  const open = () => {
+    sheet.hidden = false;
+    document.body.style.overflow = 'hidden';
+    toggle.setAttribute('aria-expanded', 'true');
+    // marcar activo según URL también en el sheet
+    highlightCurrentLinks();
+  };
+  const close = () => {
+    sheet.hidden = true;
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  toggle.addEventListener('click', open);
+  overlay?.addEventListener('click', close);
+  closers.forEach(b => b.addEventListener('click', close));
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+  // resetea si el viewport vuelve a desktop
+  const mql = window.matchMedia('(min-width: 961px)');
+  mql.addEventListener('change', (e) => { if (e.matches) close(); });
+
+  // resaltar enlace activo (desktop + móvil)
+  function highlightCurrentLinks(){
+    const here = location.pathname.replace(/\/+$/,'') || '/';
+    document.querySelectorAll('.nav-desktop .nav-link, .sheet-nav .menu-link').forEach(a => {
+      const href = (a.getAttribute('href') || '').replace(/\/+$/,'') || '/';
+      const isCurrent =
+        (href === '/' && here === '/') ||
+        (href !== '/' && here.startsWith(href));
+      a.classList.toggle('is-current', isCurrent);
+    });
+  }
+  highlightCurrentLinks();
+})();
 
 
