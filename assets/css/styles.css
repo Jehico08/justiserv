@@ -168,110 +168,51 @@ footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:80
 /* =======================
    MENÚ MÓVIL (SHEET)
 ======================= */
-/* 🔧 Nuevo layout basado en Flex: siempre centrado */
-.sheet[hidden]{display:none}
+.sheet[hidden]{display:none!important;}
 .sheet{
   position:fixed; inset:0; z-index:1200;
-  display:flex; align-items:flex-end; justify-content:center;
+  /* oculto por defecto */
+  display:none;
+  /* centrado cuando se muestre */
+  align-items:flex-end; justify-content:center;
   background:transparent; /* overlay separado */
 }
+body.menu-open .sheet{ display:flex; } /* ← se muestra al abrir */
+
 .sheet-overlay{
   position:absolute; inset:0;
   background:rgba(4,17,29,.55); backdrop-filter:blur(2px);
 }
+
 .sheet-panel{
-  position:relative;           /* relativo dentro del flex contenedor */
-  width:min(640px,92%);        /* ancho centrado */
+  position:relative;
+  width:min(640px,92%);
   max-height:88vh; overflow:auto;
   background:#fff; border-radius:22px 22px 0 0;
   box-shadow:0 -20px 60px rgba(0,0,0,.35);
   padding:14px 16px 22px;
   margin-bottom:env(safe-area-inset-bottom, 0);
 }
-.sheet-header{display:flex;align-items:center;justify-content:space-between;padding:4px 2px 10px;border-bottom:1px solid var(--line)}
-.sheet-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#0b2239}
+
+.sheet-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:4px 2px 10px; border-bottom:1px solid var(--line)
+}
+.sheet-brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:#0b2239}
 .sheet-close{
-  background:#f1f5f9;border:1px solid #e5e7eb;border-radius:12px;
-  padding:6px 10px;font-size:1.2rem;cursor:pointer
+  background:#f1f5f9; border:1px solid #e5e7eb; border-radius:12px;
+  padding:6px 10px; font-size:1.2rem; cursor:pointer
 }
 .sheet-close:hover{background:#e9eef5}
-.sheet-nav{display:flex;flex-direction:column;gap:16px;padding:16px 6px}
+
+.sheet-nav{display:flex; flex-direction:column; gap:16px; padding:16px 6px}
 .menu-link{
-  display:block;text-align:center;text-decoration:none;color:#1f2937;
-  font-weight:800;font-size:1.4rem;padding:10px 6px
+  display:block; text-align:center; text-decoration:none; color:#1f2937;
+  font-weight:800; font-size:1.4rem; padding:10px 6px
 }
-.menu-link.is-current{color:var(--brand);text-decoration:underline;text-underline-offset:8px}
-.menu-cta{width:100%;margin-top:6px;padding:16px;font-size:1.05rem;border-radius:14px}
-.sheet-footer{display:flex;align-items:center;gap:8px;padding:10px 6px 2px;color:#475569;font-weight:700}
-
-/* =======================
-   RESPONSIVE
-======================= */
-@media (max-width:1024px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero-media{justify-self:center;max-width:680px;order:1}
+.menu-link.is-current{
+  color:var(--brand);
+  text-decoration:underline; text-underline-offset:8px
 }
-@media (max-width:960px){
-  .nav-desktop{display:none !important}
-  .nav-toggle{display:inline-block !important}
-}
-@media (max-width:640px){
-  .btn{padding:10px 14px}
-  .stat{min-width:unset;width:100%}
-}
-
-/* Parche de seguridad: si por error hay dos headers seguidos, oculta el segundo en móvil */
-@media (max-width:960px){
-  .navbar + .navbar{display:none !important}
-}
-
-/* ===== Iconos y ajustes visuales para las tarjetas ===== */
-.icon-wrap{display:flex;align-items:center;justify-content:flex-start;margin-bottom:10px}
-.icon-48{width:48px;height:48px;color:var(--brand)}
-.icon-56{width:56px;height:56px;color:#fff}
-
-/* Banda “Confianza y respaldo” */
-.trust-band{
-  background:linear-gradient(135deg,#0B7BC1,#085F96,#053E6B);
-  color:#fff;
-}
-.trust-sub{color:#dbe9f9;margin-top:6px}
-.trust-kpis{align-items:stretch;justify-content:center}
-.trust-item{
-  background:transparent;
-  border:0;
-  padding:18px 10px;
-  text-align:center;
-}
-.trust-icon{
-  display:flex;align-items:center;justify-content:center;
-  width:84px;height:84px;margin:0 auto 8px;
-  border-radius:20px;background:rgba(255,255,255,.1);
-  box-shadow:0 8px 24px rgba(0,0,0,.12);
-}
-.trust-title{font-size:1.6rem;font-weight:800;margin-top:4px}
-.trust-text{font-size:1.2rem;opacity:.95}
-
-/* Igualar tonos de botones principales (redundante pero seguro) */
-.btn-secondary{background:var(--brand);border-color:var(--brand);color:#fff}
-.btn-secondary:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
-
-/* Reafirmar grids (por si había duplicados) */
-.section{padding:64px 0}
-.row{display:grid;gap:24px}
-.row.cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.card{background:#fff;border:1px solid #eef2f7;border-radius:16px;box-shadow:var(--shadow)}
-.card .card-body{padding:20px}
-/* Hard-fix iOS: centrar sheet sí o sí */
-.sheet {
-  display:flex!important;
-  align-items:flex-end!important;
-  justify-content:center!important;
-}
-.sheet-panel {
-  position:relative!important;
-  left:auto!important;
-  right:auto!important;
-  transform:none!important;
-  margin:0 auto!important;
-}
+.menu-cta{width:100%; margin-top:6px; padding:16px; font-size:1.05rem; border-radius:14px}
+.sheet-footer{display:flex; align-items:center; gap:8px; padding:10px 6px 2px; color:#475569; font-weight:700}
