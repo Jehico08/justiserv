@@ -198,3 +198,11 @@ body.menu-open .sheet{ display:flex; }
 .trust-icon{display:flex;align-items:center;justify-content:center;width:84px;height:84px;margin:0 auto 8px;border-radius:20px;background:rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.12);}
 .trust-title{font-size:1.6rem;font-weight:800;margin-top:4px}
 .trust-text{font-size:1.2rem;opacity:.95}
+@media (max-width:960px){
+  .navbar .nav-desktop{
+    display:none!important;
+  }
+}/* 🧩 Corrección final: ocultar menú móvil en escritorio */
+@media (min-width:961px){
+  #mobileMenu { display:none!important; }
+}
