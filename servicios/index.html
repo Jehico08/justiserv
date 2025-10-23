@@ -15,6 +15,7 @@
 
 <body>
 
+<!-- ===== NAVBAR ===== -->
 <header class="navbar">
   <div class="container navbar-inner">
     <!-- Marca -->
@@ -23,13 +24,13 @@
       <span>JUSTISERV S.A.</span>
     </a>
 
-    <!-- Botón hamburguesa (solo visible en móvil por CSS) -->
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <!-- Botón hamburguesa (visible en móvil por CSS) -->
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">☰</button>
 
-    <!-- Menú de escritorio (se oculta en móvil por CSS) -->
+    <!-- Menú de escritorio -->
     <nav class="nav nav-desktop">
       <a class="nav-link" href="/">Inicio</a>
-      <a class="nav-link" href="/servicios/">Servicios</a>
+      <a class="nav-link" href="/servicios/" aria-current="page">Servicios</a>
       <a class="nav-link" href="/seguimiento/">Seguimiento</a>
       <a class="nav-link" href="/cotiza/">Cotiza</a>
       <a class="nav-link" href="/contacto/">Contacto</a>
@@ -38,23 +39,11 @@
   </div>
 </header>
 
-<!-- (Opcional) Menú móvil tipo “sheet”. Se muestra al pulsar ☰ -->
-<div id="mobileMenu" class="mobile-menu" hidden>
-  <div class="mobile-menu__panel">
-    <button class="mobile-menu__close" aria-label="Cerrar">✕</button>
-    <a href="/">Inicio</a>
-    <a href="/servicios/">Servicios</a>
-    <a href="/seguimiento/">Seguimiento</a>
-    <a href="/cotiza/">Cotiza</a>
-    <a href="/contacto/">Contacto</a>
-    <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
-  </div>
-</div>
-<!-- ===== Sheet / menú móvil ===== -->
+<!-- ===== Menú móvil (sheet ÚNICO) ===== -->
 <div id="mobileMenu" class="sheet" hidden>
   <div class="sheet-overlay" data-close></div>
 
-  <div class="sheet-panel">
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Menú">
     <div class="sheet-header">
       <a class="sheet-brand" href="/">
         <img src="/assets/img/justiserv-logo.png" width="32" height="32" alt="">
@@ -65,7 +54,7 @@
 
     <nav class="sheet-nav">
       <a class="menu-link" href="/">Inicio</a>
-      <a class="menu-link" href="/servicios/">Servicios</a>
+      <a class="menu-link" href="/servicios/" aria-current="page">Servicios</a>
       <a class="menu-link" href="/seguimiento/">Seguimiento</a>
       <a class="menu-link" href="/cotiza/">Cotiza</a>
       <a class="menu-link" href="/contacto/">Contacto</a>
@@ -79,11 +68,11 @@
   </div>
 </div>
 
-<!-- SERVICIOS -->
+<!-- ===== SERVICIOS ===== -->
 <section class="section">
   <div class="container">
     <div class="breadcrumb"><a href="/">Inicio</a> · Servicios</div>
-    <h1 style="color:var(--ink);margin:0 0 20px 0">Nuestros Servicios</h1>
+    <h1 style="color:var(--brand-ink);margin:0 0 20px 0">Nuestros Servicios</h1>
 
     <div class="row cols-3">
       <article class="card reveal">
@@ -101,7 +90,7 @@
       <article class="card reveal">
         <div class="card-body">
           <h3>Courier y última milla</h3>
-          <p>Entregas urbanas y nacionales para empresas y e-commerce.</p>
+        <p>Entregas urbanas y nacionales para empresas y e-commerce.</p>
           <ul style="margin:8px 0 0 18px">
             <li>Prueba de entrega (POD) digital.</li>
             <li>Integración con Shopify, WooCommerce y API propia.</li>
@@ -116,7 +105,7 @@
           <p>Administración de inventarios, bodegas y distribución nacional.</p>
           <ul style="margin:8px 0 0 18px">
             <li>Cross-dock, picking, packing y almacenamiento.</li>
-            <li>Centro de distribución (CD) con control de inventario en línea.</li>
+            <li>CD con control de inventario en línea.</li>
             <li>Indicadores OTIF, fill rate y reportes personalizados.</li>
           </ul>
         </div>
@@ -125,7 +114,7 @@
   </div>
 </section>
 
-<!-- BLOQUE DIFERENCIADOR -->
+<!-- ===== BLOQUE DIFERENCIADOR ===== -->
 <section class="section alt">
   <div class="container center reveal">
     <h2>Ventajas competitivas</h2>
@@ -133,36 +122,44 @@
       En <b>JUSTISERV S.A.</b> garantizamos operaciones seguras, eficientes y trazables. Nuestra flota moderna y equipo especializado aseguran puntualidad y confiabilidad en cada entrega.
     </p>
     <div class="row cols-3" style="align-items:center;justify-content:center">
-      <div class="kpi">
-        <b>98.7%</b><br><span>Entregas a tiempo</span>
-      </div>
-      <div class="kpi">
-        <b>500+</b><br><span>Clientes satisfechos</span>
-      </div>
-      <div class="kpi">
-        <b>24/7</b><br><span>Atención personalizada</span>
-      </div>
+      <div class="kpi"><b>98.7%</b><br><span>Entregas a tiempo</span></div>
+      <div class="kpi"><b>500+</b><br><span>Clientes satisfechos</span></div>
+      <div class="kpi"><b>24/7</b><br><span>Atención personalizada</span></div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer>
   <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
     <div class="brand" style="display:flex;align-items:center;gap:10px">
       <img src="/assets/img/justiserv-logo.png" width="28" height="28" alt="Logo JUSTISERV" />
       <span>JUSTISERV S.A.</span>
     </div>
-    <div class="small">© <span id="year"></span> Todos los derechos reservados.</div>
+    <div class="small">©️ <span id="year"></span> Todos los derechos reservados.</div>
   </div>
 </footer>
 
 <!-- WhatsApp -->
 <a class="wa-btn" href="https://wa.me/593982923258" aria-label="WhatsApp">WhatsApp</a>
 
+<!-- ===== JS ===== -->
 <script src="/assets/js/main.js" defer></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Fallback abrir/cerrar menú móvil (por si main.js aún no está)
+  (function () {
+    const toggle = document.querySelector('.nav-toggle');
+    const sheet  = document.getElementById('mobileMenu');
+    if (!toggle || !sheet) return;
+
+    function openSheet(){ sheet.hidden=false; toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+    function closeSheet(){ sheet.hidden=true; toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+
+    toggle.addEventListener('click', openSheet);
+    sheet.addEventListener('click', e => { if (e.target.matches('[data-close], .sheet-overlay, .menu-link')) closeSheet(); });
+  }());
 </script>
 </body>
 </html>

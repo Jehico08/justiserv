@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>Cotiza  | JUSTISERV S.A.</title>
+  <title>Cotiza | JUSTISERV S.A.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Solicita una cotización rápida con JUSTISERV S.A. Transporte de carga, courier y logística integral en Ecuador. Respuesta en minutos." />
   <link rel="icon" href="/assets/img/justiserv-logo.png" />
@@ -13,46 +13,32 @@
 </head>
 
 <body>
+<!-- ===== NAVBAR ===== -->
 <header class="navbar">
   <div class="container navbar-inner">
-    <!-- Marca -->
     <a class="navbar-brand" href="/">
       <img src="/assets/img/justiserv-logo.png" width="52" height="52" alt="JUSTISERV S.A.">
       <span>JUSTISERV S.A.</span>
     </a>
 
-    <!-- Botón hamburguesa (solo visible en móvil por CSS) -->
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">☰</button>
 
-    <!-- Menú de escritorio (se oculta en móvil por CSS) -->
     <nav class="nav nav-desktop">
       <a class="nav-link" href="/">Inicio</a>
       <a class="nav-link" href="/servicios/">Servicios</a>
       <a class="nav-link" href="/seguimiento/">Seguimiento</a>
-      <a class="nav-link" href="/cotiza/">Cotiza</a>
+      <a class="nav-link" href="/cotiza/" aria-current="page">Cotiza</a>
       <a class="nav-link" href="/contacto/">Contacto</a>
       <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
     </nav>
   </div>
 </header>
 
-<!-- (Opcional) Menú móvil tipo “sheet”. Se muestra al pulsar ☰ -->
-<div id="mobileMenu" class="mobile-menu" hidden>
-  <div class="mobile-menu__panel">
-    <button class="mobile-menu__close" aria-label="Cerrar">✕</button>
-    <a href="/">Inicio</a>
-    <a href="/servicios/">Servicios</a>
-    <a href="/seguimiento/">Seguimiento</a>
-    <a href="/cotiza/">Cotiza</a>
-    <a href="/contacto/">Contacto</a>
-    <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
-  </div>
-</div>
-<!-- ===== Sheet / menú móvil ===== -->
+<!-- ===== Menú móvil (sheet ÚNICO) ===== -->
 <div id="mobileMenu" class="sheet" hidden>
   <div class="sheet-overlay" data-close></div>
 
-  <div class="sheet-panel">
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Menú">
     <div class="sheet-header">
       <a class="sheet-brand" href="/">
         <img src="/assets/img/justiserv-logo.png" width="32" height="32" alt="">
@@ -65,7 +51,7 @@
       <a class="menu-link" href="/">Inicio</a>
       <a class="menu-link" href="/servicios/">Servicios</a>
       <a class="menu-link" href="/seguimiento/">Seguimiento</a>
-      <a class="menu-link" href="/cotiza/">Cotiza</a>
+      <a class="menu-link" href="/cotiza/" aria-current="page">Cotiza</a>
       <a class="menu-link" href="/contacto/">Contacto</a>
       <a class="btn btn-primary menu-cta" href="/cotiza/">Cotiza ahora</a>
     </nav>
@@ -77,7 +63,7 @@
   </div>
 </div>
 
-<!-- SECCIÓN COTIZACIÓN -->
+<!-- ===== SECCIÓN COTIZACIÓN ===== -->
 <section class="section">
   <div class="container">
     <div class="breadcrumb"><a href="/">Inicio</a> · Cotiza</div>
@@ -88,6 +74,7 @@
       <div class="card reveal">
         <div class="card-body">
           <form id="quote-form" action="https://formspree.io/f/xanpawvd" method="POST" novalidate>
+            <!-- antispam / metadatos -->
             <input type="text" name="_gotcha" style="display:none">
             <input type="hidden" name="_subject" value="Nueva cotización desde justiservsa.com">
             <input type="hidden" name="origen_form" value="cotiza">
@@ -153,35 +140,49 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer>
   <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
     <div class="brand" style="display:flex;align-items:center;gap:10px">
       <img src="/assets/img/justiserv-logo.png" width="28" height="28" alt="Logo JUSTISERV" />
       <span>JUSTISERV S.A.</span>
     </div>
-    <div class="small">© <span id="year"></span> Todos los derechos reservados.</div>
+    <div class="small">©️ <span id="year"></span> Todos los derechos reservados.</div>
   </div>
 </footer>
 
 <a class="wa-btn" href="https://wa.me/593982923258" aria-label="WhatsApp">WhatsApp</a>
 
-<!-- JS -->
+<!-- ===== JS ===== -->
 <script src="/assets/js/main.js" defer></script>
 <script>
+  // Año footer
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  const form = document.getElementById('quote-form');
-  const statusEl = document.getElementById('quote-status');
-  const btn = document.getElementById('quote-submit');
+  // Fallback para abrir/cerrar el menú móvil si main.js no está disponible
+  (function () {
+    const toggle = document.querySelector('.nav-toggle');
+    const sheet  = document.getElementById('mobileMenu');
+    if (!toggle || !sheet) return;
 
-  if (form) {
+    function openSheet(){ sheet.hidden=false; toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+    function closeSheet(){ sheet.hidden=true; toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+
+    toggle.addEventListener('click', openSheet);
+    sheet.addEventListener('click', e => { if (e.target.matches('[data-close], .sheet-overlay')) closeSheet(); });
+    sheet.querySelectorAll('a').forEach(a => a.addEventListener('click', closeSheet));
+  }());
+
+  // Envío del formulario
+  (function () {
+    const form = document.getElementById('quote-form');
+    const statusEl = document.getElementById('quote-status');
+    const btn = document.getElementById('quote-submit');
+    if (!form) return;
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
+      if (!form.checkValidity()) { form.reportValidity(); return; }
 
       statusEl.textContent = 'Enviando...';
       btn.disabled = true;
@@ -192,7 +193,6 @@
           headers: { 'Accept': 'application/json' },
           body: new FormData(form)
         });
-
         if (res.ok) {
           statusEl.textContent = 'Enviado correctamente. Te contactaremos pronto.';
           form.reset();
@@ -203,10 +203,10 @@
         statusEl.textContent = 'Error de red. Verifica tu conexión.';
       } finally {
         btn.disabled = false;
-        setTimeout(() => (statusEl.textContent = ''), 6000);
+        setTimeout(() => statusEl.textContent = '', 6000);
       }
     });
-  }
+  }());
 </script>
 </body>
 </html>

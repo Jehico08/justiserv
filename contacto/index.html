@@ -45,47 +45,32 @@
 </head>
 <body>
 
+<!-- ===== NAVBAR ===== -->
 <header class="navbar">
   <div class="container navbar-inner">
-    <!-- Marca -->
     <a class="navbar-brand" href="/">
       <img src="/assets/img/justiserv-logo.png" width="52" height="52" alt="JUSTISERV S.A.">
       <span>JUSTISERV S.A.</span>
     </a>
 
-    <!-- Botón hamburguesa (solo visible en móvil por CSS) -->
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">☰</button>
 
-    <!-- Menú de escritorio (se oculta en móvil por CSS) -->
     <nav class="nav nav-desktop">
       <a class="nav-link" href="/">Inicio</a>
       <a class="nav-link" href="/servicios/">Servicios</a>
       <a class="nav-link" href="/seguimiento/">Seguimiento</a>
       <a class="nav-link" href="/cotiza/">Cotiza</a>
-      <a class="nav-link" href="/contacto/">Contacto</a>
+      <a class="nav-link" href="/contacto/" aria-current="page">Contacto</a>
       <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
     </nav>
   </div>
 </header>
 
-<!-- (Opcional) Menú móvil tipo “sheet”. Se muestra al pulsar ☰ -->
-<div id="mobileMenu" class="mobile-menu" hidden>
-  <div class="mobile-menu__panel">
-    <button class="mobile-menu__close" aria-label="Cerrar">✕</button>
-    <a href="/">Inicio</a>
-    <a href="/servicios/">Servicios</a>
-    <a href="/seguimiento/">Seguimiento</a>
-    <a href="/cotiza/">Cotiza</a>
-    <a href="/contacto/">Contacto</a>
-    <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
-  </div>
-</div>
-
-<!-- ===== Sheet / menú móvil ===== -->
+<!-- ===== Menú móvil (sheet ÚNICO) ===== -->
 <div id="mobileMenu" class="sheet" hidden>
   <div class="sheet-overlay" data-close></div>
 
-  <div class="sheet-panel">
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Menú">
     <div class="sheet-header">
       <a class="sheet-brand" href="/">
         <img src="/assets/img/justiserv-logo.png" width="32" height="32" alt="">
@@ -99,7 +84,7 @@
       <a class="menu-link" href="/servicios/">Servicios</a>
       <a class="menu-link" href="/seguimiento/">Seguimiento</a>
       <a class="menu-link" href="/cotiza/">Cotiza</a>
-      <a class="menu-link" href="/contacto/">Contacto</a>
+      <a class="menu-link" href="/contacto/" aria-current="page">Contacto</a>
       <a class="btn btn-primary menu-cta" href="/cotiza/">Cotiza ahora</a>
     </nav>
 
@@ -110,7 +95,7 @@
   </div>
 </div>
 
-<!-- CONTENIDO -->
+<!-- ===== CONTENIDO ===== -->
 <section class="section">
   <div class="container">
     <div class="breadcrumb"><a href="/">Inicio</a> · Contacto</div>
@@ -186,7 +171,7 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer>
   <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
     <div class="brand" style="display:flex;align-items:center;gap:10px">
@@ -199,9 +184,24 @@
 
 <a class="wa-btn" href="https://wa.me/593982923258?text=Hola,%20quisiera%20una%20cotizaci%C3%B3n" aria-label="WhatsApp">WhatsApp</a>
 
+<!-- ===== JS ===== -->
 <script src="/assets/js/main.js"></script>
 <script>
+  // año footer
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Fallback abrir/cerrar menú móvil si hiciera falta
+  (function () {
+    const toggle = document.querySelector('.nav-toggle');
+    const sheet  = document.getElementById('mobileMenu');
+    if (!toggle || !sheet) return;
+
+    function openSheet(){ sheet.hidden=false; toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+    function closeSheet(){ sheet.hidden=true; toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+
+    toggle.addEventListener('click', openSheet);
+    sheet.addEventListener('click', e => { if (e.target.matches('[data-close], .sheet-overlay, .menu-link')) closeSheet(); });
+  }());
 </script>
 </body>
 </html>

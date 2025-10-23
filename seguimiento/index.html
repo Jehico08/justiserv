@@ -2,9 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>Seguimiento  | JUSTISERV S.A.</title>
+  <title>Seguimiento | JUSTISERV S.A.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Consulta el estado de tus envíos con JUSTISERV S.A. Seguimiento en línea 24/7 por número de guía." />
+
   <link rel="icon" href="/assets/img/justiserv-logo.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,6 +14,7 @@
 </head>
 <body>
 
+<!-- ===== NAVBAR ===== -->
 <header class="navbar">
   <div class="container navbar-inner">
     <!-- Marca -->
@@ -21,14 +23,14 @@
       <span>JUSTISERV S.A.</span>
     </a>
 
-    <!-- Botón hamburguesa (solo visible en móvil por CSS) -->
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <!-- Botón hamburguesa -->
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">☰</button>
 
-    <!-- Menú de escritorio (se oculta en móvil por CSS) -->
+    <!-- Menú de escritorio -->
     <nav class="nav nav-desktop">
       <a class="nav-link" href="/">Inicio</a>
       <a class="nav-link" href="/servicios/">Servicios</a>
-      <a class="nav-link" href="/seguimiento/">Seguimiento</a>
+      <a class="nav-link" href="/seguimiento/" aria-current="page">Seguimiento</a>
       <a class="nav-link" href="/cotiza/">Cotiza</a>
       <a class="nav-link" href="/contacto/">Contacto</a>
       <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
@@ -36,24 +38,11 @@
   </div>
 </header>
 
-<!-- (Opcional) Menú móvil tipo “sheet”. Se muestra al pulsar ☰ -->
-<div id="mobileMenu" class="mobile-menu" hidden>
-  <div class="mobile-menu__panel">
-    <button class="mobile-menu__close" aria-label="Cerrar">✕</button>
-    <a href="/">Inicio</a>
-    <a href="/servicios/">Servicios</a>
-    <a href="/seguimiento/">Seguimiento</a>
-    <a href="/cotiza/">Cotiza</a>
-    <a href="/contacto/">Contacto</a>
-    <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
-  </div>
-</div>
-
-<!-- ===== Sheet / menú móvil ===== -->
+<!-- ===== Menú móvil (sheet ÚNICO) ===== -->
 <div id="mobileMenu" class="sheet" hidden>
   <div class="sheet-overlay" data-close></div>
 
-  <div class="sheet-panel">
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Menú">
     <div class="sheet-header">
       <a class="sheet-brand" href="/">
         <img src="/assets/img/justiserv-logo.png" width="32" height="32" alt="">
@@ -65,7 +54,7 @@
     <nav class="sheet-nav">
       <a class="menu-link" href="/">Inicio</a>
       <a class="menu-link" href="/servicios/">Servicios</a>
-      <a class="menu-link" href="/seguimiento/">Seguimiento</a>
+      <a class="menu-link" href="/seguimiento/" aria-current="page">Seguimiento</a>
       <a class="menu-link" href="/cotiza/">Cotiza</a>
       <a class="menu-link" href="/contacto/">Contacto</a>
       <a class="btn btn-primary menu-cta" href="/cotiza/">Cotiza ahora</a>
@@ -78,13 +67,13 @@
   </div>
 </div>
 
-<!-- CONTENIDO -->
+<!-- ===== CONTENIDO ===== -->
 <section class="section">
   <div class="container">
     <nav class="breadcrumb" aria-label="Miga de pan">
       <a href="/">Inicio</a> · <span aria-current="page">Seguimiento</span>
     </nav>
-    <h1 style="color:var(--ink);margin:0 0 20px 0">Seguimiento en línea</h1>
+    <h1 style="color:var(--brand-ink);margin:0 0 20px 0">Seguimiento en línea</h1>
 
     <div class="card" style="max-width:960px;margin:0 auto;box-shadow:var(--shadow)">
       <div class="card-body">
@@ -126,38 +115,48 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer>
   <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
     <div class="brand">
       <img src="/assets/img/justiserv-logo.png" width="28" height="28" alt="Logo JUSTISERV S.A." />
       <span>JUSTISERV S.A.</span>
     </div>
-    <div class="small">© <span id="year"></span> Todos los derechos reservados.</div>
+    <div class="small">©️ <span id="year"></span> Todos los derechos reservados.</div>
   </div>
 </footer>
 
 <!-- WhatsApp flotante -->
 <a class="wa-btn" href="https://wa.me/593982923258" aria-label="WhatsApp">WhatsApp</a>
 
-<!-- JS -->
+<!-- ===== JS ===== -->
 <script src="/assets/js/main.js" defer></script>
 <script>
   // año del footer
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // (Opcional) Intercepta el submit para futuro uso con API real
+  // Fallback abrir/cerrar menú móvil (si por algo main.js no cargara)
+  (function () {
+    const toggle = document.querySelector('.nav-toggle');
+    const sheet  = document.getElementById('mobileMenu');
+    if (!toggle || !sheet) return;
+
+    function openSheet(){ sheet.hidden=false; toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+    function closeSheet(){ sheet.hidden=true; toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+
+    toggle.addEventListener('click', openSheet);
+    sheet.addEventListener('click', e => {
+      if (e.target.matches('[data-close], .sheet-overlay, .menu-link')) closeSheet();
+    });
+  }());
+
+  // Demo: interceptar submit hasta tener API real
   document.getElementById('track-form').addEventListener('submit', function (e) {
     e.preventDefault();
     const guia = document.getElementById('guia').value.trim();
-    if (!guia) {
-      alert('Por favor ingresa tu número de guía.');
-      document.getElementById('guia').focus();
-      return;
-    }
-    // Aquí podrías redirigir o consultar una API real
-    // Por ahora solo mostramos un aviso
-    alert('Buscando guía: ' + guia + (document.getElementById('doc').value ? ' • Doc: ' + document.getElementById('doc').value.trim() : ''));
+    const doc  = document.getElementById('doc').value.trim();
+    if (!guia) { alert('Por favor ingresa tu número de guía.'); return; }
+    alert('Buscando guía: ' + guia + (doc ? ' • Doc: ' + doc : ''));
   });
 </script>
 </body>
