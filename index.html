@@ -21,7 +21,7 @@
       }
       body.menu-open{overflow:hidden;touch-action:none;}
     }
-    /* Botón igualado */
+    /* Mismo color para "Ver servicios" */
     .btn-secondary{
       background: var(--brand) !important;
       border-color: var(--brand) !important;
@@ -31,6 +31,12 @@
       background: var(--brand-dark) !important;
       border-color: var(--brand-dark) !important;
     }
+    /* Pequeños estilos de los iconos inline (SVG) de esta página */
+    .icon { display:inline-block; width:28px; height:28px; vertical-align:-6px; }
+    .icon.big { width:36px; height:36px; vertical-align:-8px; }
+    .with-icon { display:flex; align-items:center; gap:10px; }
+    .feature { display:flex; gap:12px; align-items:flex-start; }
+    .feature .icon { flex:0 0 auto; }
   </style>
 </head>
 
@@ -107,18 +113,117 @@
   </div>
 </section>
 
-<!-- BLOQUE INFERIOR -->
+<!-- QUÉ HACEMOS -->
+<section class="section">
+  <div class="container">
+    <h2 class="center" style="margin:0 0 24px 0">Qué hacemos</h2>
+    <div class="row cols-3">
+      <!-- Carga pesada -->
+      <article class="card reveal">
+        <div class="card-body">
+          <div class="with-icon">
+            <!-- Camión -->
+            <svg class="icon big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 7h10v7H3zM13 10h4l3 4v3h-2M5.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm10 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+            </svg>
+            <h3 style="margin:0">Carga pesada</h3>
+          </div>
+          <p class="mb-0" style="margin-top:8px">Plataformas, lowboy y furgones. Rutas nacionales con seguro y monitoreo.</p>
+        </div>
+      </article>
+
+      <!-- Courier -->
+      <article class="card reveal">
+        <div class="card-body">
+          <div class="with-icon">
+            <!-- Caja/envío -->
+            <svg class="icon big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 8l9-5 9 5-9 5-9-5Z"/><path d="M12 13v9M21 8v8l-9 5-9-5V8"/>
+            </svg>
+            <h3 style="margin:0">Courier y última milla</h3>
+          </div>
+          <p class="mb-0" style="margin-top:8px">Entregas B2B/B2C, POD digital, rutas programadas y devoluciones claras.</p>
+        </div>
+      </article>
+
+      <!-- Logística integral -->
+      <article class="card reveal">
+        <div class="card-body">
+          <div class="with-icon">
+            <!-- Bodega/warehouse -->
+            <svg class="icon big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 9l9-6 9 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="M7 19v-6h10v6M7 13l5-3 5 3"/>
+            </svg>
+            <h3 style="margin:0">Logística integral</h3>
+          </div>
+          <p class="mb-0" style="margin-top:8px">CD, almacenamiento, picking/packing, cross-dock y distribución nacional.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIANZA Y RESPALDO -->
+<section class="section" style="background:linear-gradient(135deg,#0B7BC1,#085F96,#053E6B);color:#fff;">
+  <div class="container reveal">
+    <h2 class="center" style="margin:0 0 8px 0">Confianza y respaldo</h2>
+    <p class="center" style="color:#dbe9f9;margin:0 0 18px 0">Certificaciones y tecnología que garantizan seguridad y calidad.</p>
+
+    <div class="row cols-3" style="align-items:flex-start">
+      <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)">
+        <div class="card-body">
+          <div class="feature">
+            <!-- Certificado -->
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2l2.5 4.9 5.4.8-3.9 3.8.9 5.3L12 14.9 7.1 17.8l.9-5.3L4.1 7.7l5.4-.8L12 2z"/>
+            </svg>
+            <div>
+              <b>ISO 9001</b>
+              <p class="mb-0" style="color:#e6f2fb">Gestión de calidad en procesos logísticos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)">
+        <div class="card-body">
+          <div class="feature">
+            <!-- Escudo -->
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2l7 3v6c0 5.25-3.5 9.74-7 11-3.5-1.26-7-5.75-7-11V5l7-3z"/>
+            </svg>
+            <div>
+              <b>BASC</b>
+              <p class="mb-0" style="color:#e6f2fb">Seguridad en la cadena de suministro.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)">
+        <div class="card-body">
+          <div class="feature">
+            <!-- Ubicación/GPS -->
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22s7-7.16 7-12a7 7 0 1 0-14 0c0 4.84 7 12 7 12z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <div>
+              <b>GPS 24/7</b>
+              <p class="mb-0" style="color:#e6f2fb">Monitoreo satelital en tiempo real.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
 <section class="section alt">
   <div class="container center reveal">
-    <h2>¿Por qué elegirnos?</h2>
-    <p style="max-width:700px;margin:0 auto 24px;color:#334155">
-      En <b>JUSTISERV S.A.</b> nos especializamos en transporte de carga pesada, courier y soluciones logísticas personalizadas con monitoreo en tiempo real.
-    </p>
-    <div class="row cols-3" style="align-items:center;justify-content:center">
-      <div class="kpi"><b>100%</b><br><span>Seguridad garantizada</span></div>
-      <div class="kpi"><b>+15</b><br><span>Años de experiencia</span></div>
-      <div class="kpi"><b>ISO 9001</b><br><span>Calidad certificada</span></div>
-    </div>
+    <h2>¿Listo para enviar?</h2>
+    <p class="mt-2">Cotiza tu envío y recibe respuesta en minutos.</p>
+    <a class="btn btn-primary mt-2" href="/cotiza/">Cotizar ahora</a>
   </div>
 </section>
 
