@@ -262,3 +262,16 @@ footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:80
 .row.cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .card{background:#fff;border:1px solid #eef2f7;border-radius:16px;box-shadow:var(--shadow)}
 .card .card-body{padding:20px}
+/* Hard-fix iOS: centrar sheet sí o sí */
+.sheet {
+  display:flex!important;
+  align-items:flex-end!important;
+  justify-content:center!important;
+}
+.sheet-panel {
+  position:relative!important;
+  left:auto!important;
+  right:auto!important;
+  transform:none!important;
+  margin:0 auto!important;
+}
