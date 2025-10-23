@@ -181,9 +181,14 @@ footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:80
 .nav-desktop { display:flex; }
 .nav-toggle  { display:none; background:transparent; border:0; font-size:1.6rem; padding:6px 10px; }
 
-@media (max-width: 960px){
-  .nav-desktop { display:none; }
-  .nav-toggle  { display:inline-block; }
+/* --- Ajuste: ocultar menú escritorio en móvil --- */
+@media (max-width: 960px) {
+  .nav-desktop {
+    display: none !important;
+  }
+  .nav-toggle {
+    display: inline-block !important;
+  }
 }
 
 /* ===== Sheet (menú móvil estilo modal) ===== */
