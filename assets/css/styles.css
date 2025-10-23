@@ -206,3 +206,57 @@ body.menu-open .sheet{ display:flex; }
 @media (min-width:961px){
   #mobileMenu { display:none!important; }
 }
+/* =======================
+   FIX FINAL — Mobile y tarjetas
+======================= */
+
+/* Menú desktop oculto en móvil */
+@media (max-width:960px){
+  .navbar .nav-desktop{display:none!important;}
+}
+
+/* Menú móvil oculto en escritorio */
+@media (min-width:961px){
+  #mobileMenu {display:none!important;}
+}
+
+/* Ajuste de tarjetas de “Confianza y respaldo” */
+.section .card {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.section .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,.15);
+}
+.section .card svg.icon {
+  width: 42px;
+  height: 42px;
+  stroke-width: 1.6;
+  margin-right: 10px;
+}
+
+/* Asegurar tamaños proporcionados en escritorio */
+@media (min-width:1024px){
+  .row.cols-3 .card-body {
+    padding: 24px;
+  }
+  .section .card svg.icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Ajustes en móvil */
+@media (max-width:640px){
+  .sheet-panel{
+    width:95vw!important;
+    max-width:520px!important;
+  }
+  .section .card svg.icon{
+    width:32px;
+    height:32px;
+  }
+  .menu-link{
+    font-size:1.2rem!important;
+  }
+}
