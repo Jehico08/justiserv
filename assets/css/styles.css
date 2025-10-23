@@ -168,14 +168,25 @@ footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:80
 /* =======================
    MENÚ MÓVIL (SHEET)
 ======================= */
+/* 🔧 Nuevo layout basado en Flex: siempre centrado */
 .sheet[hidden]{display:none}
-.sheet{position:fixed;inset:0;z-index:1200}
-.sheet-overlay{position:absolute;inset:0;background:rgba(4,17,29,.55);backdrop-filter:blur(2px)}
+.sheet{
+  position:fixed; inset:0; z-index:1200;
+  display:flex; align-items:flex-end; justify-content:center;
+  background:transparent; /* overlay separado */
+}
+.sheet-overlay{
+  position:absolute; inset:0;
+  background:rgba(4,17,29,.55); backdrop-filter:blur(2px);
+}
 .sheet-panel{
-  position:absolute;left:50%;transform:translateX(-50%);
-  bottom:0;width:min(640px,92%);max-height:88vh;overflow:auto;
-  background:#fff;border-radius:22px 22px 0 0;
-  box-shadow:0 -20px 60px rgba(0,0,0,.35);padding:14px 16px 22px;
+  position:relative;           /* relativo dentro del flex contenedor */
+  width:min(640px,92%);        /* ancho centrado */
+  max-height:88vh; overflow:auto;
+  background:#fff; border-radius:22px 22px 0 0;
+  box-shadow:0 -20px 60px rgba(0,0,0,.35);
+  padding:14px 16px 22px;
+  margin-bottom:env(safe-area-inset-bottom, 0);
 }
 .sheet-header{display:flex;align-items:center;justify-content:space-between;padding:4px 2px 10px;border-bottom:1px solid var(--line)}
 .sheet-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#0b2239}
@@ -213,6 +224,7 @@ footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:80
 @media (max-width:960px){
   .navbar + .navbar{display:none !important}
 }
+
 /* ===== Iconos y ajustes visuales para las tarjetas ===== */
 .icon-wrap{display:flex;align-items:center;justify-content:flex-start;margin-bottom:10px}
 .icon-48{width:48px;height:48px;color:var(--brand)}
@@ -240,9 +252,11 @@ footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:80
 .trust-title{font-size:1.6rem;font-weight:800;margin-top:4px}
 .trust-text{font-size:1.2rem;opacity:.95}
 
-/* Igualar tonos de botones principales */
+/* Igualar tonos de botones principales (redundante pero seguro) */
 .btn-secondary{background:var(--brand);border-color:var(--brand);color:#fff}
 .btn-secondary:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
+
+/* Reafirmar grids (por si había duplicados) */
 .section{padding:64px 0}
 .row{display:grid;gap:24px}
 .row.cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
