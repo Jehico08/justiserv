@@ -8,275 +8,247 @@
   <link rel="icon" href="assets/img/justiserv-logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
-
-  <!-- FIX: Menú móvil centrado solo en inicio + botones secundario igual que primario -->
-<style>
-    @media (max-width: 960px){
-      #home .sheet-panel{
-        position:absolute;left:0;right:0;bottom:0;margin:0 auto;
-        width:92vw;max-width:560px;max-height:88vh;overflow:auto;
-        background:#fff;border-radius:22px 22px 0 0;
-        box-shadow:0 -20px 60px rgba(0,0,0,.35);
-        padding:14px 16px calc(22px + env(safe-area-inset-bottom));
-      }
-      body.menu-open{overflow:hidden;touch-action:none;}
-    }
-    .btn-secondary{
-      background: var(--brand) !important;
-      border-color: var(--brand) !important;
-      color: #fff !important;
-    }
-    .btn-secondary:hover{
-      background: var(--brand-dark) !important;
-      border-color: var(--brand-dark) !important;
-    }
-    /* Iconos inline de esta página */
-    .icon { display:inline-block; width:28px; height:28px; vertical-align:-6px; }
-    .icon.big { width:36px; height:36px; vertical-align:-8px; }
-    .with-icon { display:flex; align-items:center; gap:10px; }
-    .feature { display:flex; gap:12px; align-items:flex-start; }
-    .feature .icon { flex:0 0 auto; }
-</style>
 </head>
 
 <body id="home">
-<header class="navbar">
-  <div class="container navbar-inner">
-    <a class="navbar-brand" href="/">
-      <img src="assets/img/justiserv-logo.png" width="52" height="52" alt="JUSTISERV S.A.">
-      <span>JUSTISERV S.A.</span>
-    </a>
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav nav-desktop">
-      <a class="nav-link is-current" href="/">Inicio</a>
-      <a class="nav-link" href="/servicios/">Servicios</a>
-      <a class="nav-link" href="/seguimiento/">Seguimiento</a>
-      <a class="nav-link" href="/cotiza/">Cotiza</a>
-      <a class="nav-link" href="/contacto/">Contacto</a>
-      <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
-    </nav>
-  </div>
-</header>
-
-<!-- Menú móvil único -->
-<div id="mobileMenu" class="sheet" hidden>
-  <div class="sheet-overlay" data-close></div>
-  <div class="sheet-panel">
-    <div class="sheet-header">
-      <a class="sheet-brand" href="/">
-        <img src="assets/img/justiserv-logo.png" width="32" height="32" alt="">
-        <strong>JUSTISERV S.A.</strong>
+  <!-- NAV -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a class="navbar-brand" href="/">
+        <img src="assets/img/justiserv-logo.png" width="52" height="52" alt="JUSTISERV S.A.">
+        <span>JUSTISERV S.A.</span>
       </a>
-      <button class="sheet-close" aria-label="Cerrar" data-close>✕</button>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="nav nav-desktop">
+        <a class="nav-link is-current" href="/">Inicio</a>
+        <a class="nav-link" href="/servicios/">Servicios</a>
+        <a class="nav-link" href="/seguimiento/">Seguimiento</a>
+        <a class="nav-link" href="/cotiza/">Cotiza</a>
+        <a class="nav-link" href="/contacto/">Contacto</a>
+        <a class="btn btn-primary" href="/cotiza/">Cotiza ahora</a>
+      </nav>
     </div>
+  </header>
 
-    <nav class="sheet-nav">
-      <a class="menu-link is-current" href="/">Inicio</a>
-      <a class="menu-link" href="/servicios/">Servicios</a>
-      <a class="menu-link" href="/seguimiento/">Seguimiento</a>
-      <a class="menu-link" href="/cotiza/">Cotiza</a>
-      <a class="menu-link" href="/contacto/">Contacto</a>
-      <a class="btn btn-primary menu-cta" href="/cotiza/">Cotiza ahora</a>
-    </nav>
-
-    <div class="sheet-footer">
-      <img src="assets/img/justiserv-logo.png" width="24" height="24" alt="">
-      <span>JUSTISERV S.A.</span>
-    </div>
-  </div>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <span class="pill">Transporte y logística integral</span>
-      <h1>Transporte de Carga y Servicios</h1>
-      <p>
-        Transportes de Carga y Servicios Justiserv S.A. es una empresa en Ecuador con sede principal en Guayaquil. 
-        Opera en el sector de Transporte de carga general.</p>
-
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="/cotiza/">Cotiza tu envío</a>
-        <a class="btn btn-secondary" href="/servicios/">Ver servicios</a>
+  <!-- Menú móvil (sheet) -->
+  <div id="mobileMenu" class="sheet" hidden>
+    <div class="sheet-overlay" data-close></div>
+    <div class="sheet-panel">
+      <div class="sheet-header">
+        <a class="sheet-brand" href="/">
+          <img src="assets/img/justiserv-logo.png" width="32" height="32" alt="">
+          <strong>JUSTISERV S.A.</strong>
+        </a>
+        <button class="sheet-close" aria-label="Cerrar" data-close>✕</button>
       </div>
 
-      <div class="stats">
-        <div class="stat"><strong>98.7%</strong><span>Entregas a tiempo</span></div>
-        <div class="stat"><strong>500+</strong><span>Clientes satisfechos</span></div>
-        <div class="stat"><strong>24/7</strong><span>Atención disponible</span></div>
+      <nav class="sheet-nav">
+        <a class="menu-link is-current" href="/">Inicio</a>
+        <a class="menu-link" href="/servicios/">Servicios</a>
+        <a class="menu-link" href="/seguimiento/">Seguimiento</a>
+        <a class="menu-link" href="/cotiza/">Cotiza</a>
+        <a class="menu-link" href="/contacto/">Contacto</a>
+        <a class="btn btn-primary menu-cta" href="/cotiza/">Cotiza ahora</a>
+      </nav>
+
+      <div class="sheet-footer">
+        <img src="assets/img/justiserv-logo.png" width="24" height="24" alt="">
+        <span>JUSTISERV S.A.</span>
       </div>
     </div>
-
-    <div class="hero-media">
-      <img src="assets/img/camion2.jpeg" alt="Camión de transporte JUSTISERV S.A." width="960" height="640" loading="eager" decoding="async">
-    </div>
   </div>
-</section>
 
-<!-- QUÉ HACEMOS -->
-<section class="section">
-  <div class="container">
-    <h2 class="center" style="margin:0 0 24px 0">Qué hacemos</h2>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="pill">Transporte y logística integral</span>
+        <h1>Transporte de Carga y Servicios</h1>
+        <p>
+          Transportes de Carga y Servicios Justiserv S.A. es una empresa en Ecuador con sede principal en Guayaquil.
+          Opera en el sector de Transporte de carga general.
+        </p>
 
-    <div class="row cols-3">
-      <!-- Carga pesada -->
-      <article class="card reveal">
-        <div class="card-body">
-          <div style="display:flex;align-items:center;gap:10px">
-            <!-- Camión -->
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 7h10v7H3zM13 10h4l3 4v3h-2M5.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm10 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
-            </svg>
-            <h3 style="margin:0">Carga pesada</h3>
-          </div>
-          <p class="mb-0" style="margin-top:8px">Plataformas, lowboy y furgones. Rutas nacionales con seguro y monitoreo.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="/cotiza/">Cotiza tu envío</a>
+          <a class="btn btn-secondary" href="/servicios/">Ver servicios</a>
         </div>
-      </article>
 
-      <!-- Courier y última milla -->
-      <article class="card reveal">
-        <div class="card-body">
-          <div style="display:flex;align-items:center;gap:10px">
-            <!-- Caja/envío -->
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 8l9-5 9 5-9 5-9-5Z"/><path d="M12 13v9M21 8v8l-9 5-9-5V8"/>
-            </svg>
-            <h3 style="margin:0">Courier y última milla</h3>
-          </div>
-          <p class="mb-0" style="margin-top:8px">Entregas B2B/B2C, POD digital, rutas programadas y devoluciones claras.</p>
+        <div class="stats">
+          <div class="stat"><strong>98.7%</strong><span>Entregas a tiempo</span></div>
+          <div class="stat"><strong>500+</strong><span>Clientes satisfechos</span></div>
+          <div class="stat"><strong>24/7</strong><span>Atención disponible</span></div>
         </div>
-      </article>
+      </div>
 
-      <!-- Logística integral -->
-      <article class="card reveal">
-        <div class="card-body">
-          <div style="display:flex;align-items:center;gap:10px">
-            <!-- Bodega -->
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 9l9-6 9 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="M7 19v-6h10v6M7 13l5-3 5 3"/>
-            </svg>
-            <h3 style="margin:0">Logística integral</h3>
-          </div>
-          <p class="mb-0" style="margin-top:8px">CD, almacenamiento, picking/packing, cross-dock y distribución nacional.</p>
-        </div>
-      </article>
+      <div class="hero-media">
+        <img src="assets/img/camion2.jpeg" alt="Camión de transporte JUSTISERV S.A." width="960" height="640" loading="eager" decoding="async">
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONFIANZA Y RESPALDO -->
-<section class="section" style="background:linear-gradient(135deg,#0B7BC1,#085F96,#053E6B);color:#fff;">
-  <div class="container reveal">
-    <h2 class="center" style="margin:0 0 8px 0">Confianza y respaldo</h2>
-    <p class="center" style="color:#dbe9f9;margin:0 0 18px 0">Certificaciones y tecnología que garantizan seguridad y calidad.</p>
+  <!-- QUÉ HACEMOS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="center" style="margin:0 0 24px 0">Qué hacemos</h2>
 
-    <div class="row cols-3" style="align-items:flex-start">
-      <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)">
-        <div class="card-body">
-          <div class="feature">
-            <!-- Certificado -->
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2l2.5 4.9 5.4.8-3.9 3.8.9 5.3L12 14.9 7.1 17.8l.9-5.3L4.1 7.7l5.4-.8L12 2z"/>
-            </svg>
-            <div>
-              <b>ISO 9001</b>
-              <p class="mb-0" style="color:#e6f2fb">Gestión de calidad en procesos logísticos.</p>
+      <div class="row cols-3">
+        <!-- Carga pesada -->
+        <article class="card reveal">
+          <div class="card-body">
+            <div style="display:flex;align-items:center;gap:10px">
+              <!-- Camión -->
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 7h10v7H3zM13 10h4l3 4v3h-2M5.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm10 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+              </svg>
+              <h3 style="margin:0">Carga pesada</h3>
+            </div>
+            <p class="mb-0" style="margin-top:8px">Plataformas, lowboy y furgones. Rutas nacionales con seguro y monitoreo.</p>
+          </div>
+        </article>
+
+        <!-- Courier y última milla -->
+        <article class="card reveal">
+          <div class="card-body">
+            <div style="display:flex;align-items:center;gap:10px">
+              <!-- Caja/envío -->
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8l9-5 9 5-9 5-9-5Z"/><path d="M12 13v9M21 8v8l-9 5-9-5V8"/>
+              </svg>
+              <h3 style="margin:0">Courier y última milla</h3>
+            </div>
+            <p class="mb-0" style="margin-top:8px">Entregas B2B/B2C, POD digital, rutas programadas y devoluciones claras.</p>
+          </div>
+        </article>
+
+        <!-- Logística integral -->
+        <article class="card reveal">
+          <div class="card-body">
+            <div style="display:flex;align-items:center;gap:10px">
+              <!-- Bodega -->
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 9l9-6 9 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="M7 19v-6h10v6M7 13l5-3 5 3"/>
+              </svg>
+              <h3 style="margin:0">Logística integral</h3>
+            </div>
+            <p class="mb-0" style="margin-top:8px">CD, almacenamiento, picking/packing, cross-dock y distribución nacional.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIANZA Y RESPALDO -->
+  <section class="section" style="background:linear-gradient(135deg,#0B7BC1,#085F96,#053E6B);color:#fff;">
+    <div class="container reveal">
+      <h2 class="center" style="margin:0 0 8px 0">Confianza y respaldo</h2>
+      <p class="center" style="color:#dbe9f9;margin:0 0 18px 0">Certificaciones y tecnología que garantizan seguridad y calidad.</p>
+
+      <div class="row cols-3" style="align-items:flex-start">
+        <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)">
+          <div class="card-body">
+            <div class="feature">
+              <!-- Certificado -->
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2l2.5 4.9 5.4.8-3.9 3.8.9 5.3L12 14.9 7.1 17.8l.9-5.3L4.1 7.7l5.4-.8L12 2z"/>
+              </svg>
+              <div>
+                <b>ISO 9001</b>
+                <p class="mb-0" style="color:#e6f2fb">Gestión de calidad en procesos logísticos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)">
+          <div class="card-body">
+            <div class="feature">
+              <!-- Escudo -->
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2l7 3v6c0 5.25-3.5 9.74-7 11-3.5-1.26-7-5.75-7-11V5l7-3z"/>
+              </svg>
+              <div>
+                <b>BASC</b>
+                <p class="mb-0" style="color:#e6f2fb">Seguridad en la cadena de suministro.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)">
+          <div class="card-body">
+            <div class="feature">
+              <!-- Ubicación/GPS -->
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22s7-7.16 7-12a7 7 0 1 0-14 0c0 4.84 7 12 7 12z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <div>
+                <b>GPS 24/7</b>
+                <p class="mb-0" style="color:#e6f2fb">Monitoreo satelital en tiempo real.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)">
-        <div class="card-body">
-          <div class="feature">
-            <!-- Escudo -->
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2l7 3v6c0 5.25-3.5 9.74-7 11-3.5-1.26-7-5.75-7-11V5l7-3z"/>
-            </svg>
-            <div>
-              <b>BASC</b>
-              <p class="mb-0" style="color:#e6f2fb">Seguridad en la cadena de suministro.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)">
-        <div class="card-body">
-          <div class="feature">
-            <!-- Ubicación/GPS -->
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 22s7-7.16 7-12a7 7 0 1 0-14 0c0 4.84 7 12 7 12z"/><circle cx="12" cy="10" r="3"/>
-            </svg>
-            <div>
-              <b>GPS 24/7</b>
-              <p class="mb-0" style="color:#e6f2fb">Monitoreo satelital en tiempo real.</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA -->
-<section class="section alt">
-  <div class="container center reveal">
-    <h2>¿Listo para enviar?</h2>
-    <p class="mt-2">Cotiza tu envío y recibe respuesta en minutos.</p>
-    <a class="btn btn-primary mt-2" href="/cotiza/">Cotizar ahora</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
-    <div class="brand" style="display:flex;align-items:center;gap:10px">
-      <img src="assets/img/justiserv-logo.png" width="28" height="28" alt="">
-      <span>JUSTISERV S.A.</span>
+  <!-- CTA -->
+  <section class="section alt">
+    <div class="container center reveal">
+      <h2>¿Listo para enviar?</h2>
+      <p class="mt-2">Cotiza tu envío y recibe respuesta en minutos.</p>
+      <a class="btn btn-primary mt-2" href="/cotiza/">Cotizar ahora</a>
     </div>
-    <div class="small">©️ <span id="year"></span> Todos los derechos reservados.</div>
-  </div>
-</footer>
+  </section>
 
-<a class="wa-btn" href="https://wa.me/593982923258?text=Hola,%20necesito%20una%20cotizaci%C3%B3n" aria-label="WhatsApp">WhatsApp</a>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container" style="display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center">
+      <div class="brand" style="display:flex;align-items:center;gap:10px">
+        <img src="assets/img/justiserv-logo.png" width="28" height="28" alt="">
+        <span>JUSTISERV S.A.</span>
+      </div>
+      <div class="small">©️ <span id="year"></span> Todos los derechos reservados.</div>
+    </div>
+  </footer>
 
-<!-- JS -->
-<script>
-  const btn = document.querySelector('.nav-toggle');
-  const sheet = document.getElementById('mobileMenu');
+  <a class="wa-btn" href="https://wa.me/593982923258?text=Hola,%20necesito%20una%20cotizaci%C3%B3n" aria-label="WhatsApp">WhatsApp</a>
 
-  function openMenu(){ sheet.hidden = false; document.body.classList.add('menu-open'); btn?.setAttribute('aria-expanded','true'); }
-  function closeMenu(){ sheet.hidden = true; document.body.classList.remove('menu-open'); btn?.setAttribute('aria-expanded','false'); }
+  <!-- JS -->
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const sheet = document.getElementById('mobileMenu');
 
-  btn?.addEventListener('click', openMenu);
-  sheet?.addEventListener('click', e => { if(e.target.matches('[data-close], .sheet-overlay')) closeMenu(); });
-  sheet?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    function openMenu(){ sheet.hidden = false; document.body.classList.add('menu-open'); btn?.setAttribute('aria-expanded','true'); }
+    function closeMenu(){ sheet.hidden = true; document.body.classList.remove('menu-open'); btn?.setAttribute('aria-expanded','false'); }
 
-  document.getElementById('year').textContent = new Date().getFullYear();
+    btn?.addEventListener('click', openMenu);
+    sheet?.addEventListener('click', e => { if(e.target.matches('[data-close], .sheet-overlay')) closeMenu(); });
+    sheet?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
-  // Animación .reveal (IntersectionObserver)
-  (function () {
-    const els = document.querySelectorAll('.reveal');
-    if (!els.length) return;
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    if (!('IntersectionObserver' in window)) {
-      els.forEach(el => el.classList.add('show'));
-      return;
-    }
+    // Animación .reveal
+    (function () {
+      const els = document.querySelectorAll('.reveal');
+      if (!els.length) return;
 
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(el => el.classList.add('show'));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
 
-    els.forEach(el => io.observe(el));
-  })();
-</script>
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
 </body>
 </html>
