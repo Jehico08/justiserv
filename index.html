@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <!-- FIX: Menú móvil centrado solo en inicio -->
+  <!-- FIX: Menú móvil centrado solo en inicio + botones secundario igual que primario -->
   <style>
     @media (max-width: 960px){
       #home .sheet-panel{
@@ -21,7 +21,6 @@
       }
       body.menu-open{overflow:hidden;touch-action:none;}
     }
-    /* Mismo color para "Ver servicios" */
     .btn-secondary{
       background: var(--brand) !important;
       border-color: var(--brand) !important;
@@ -257,8 +256,8 @@
   sheet?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
   document.getElementById('year').textContent = new Date().getFullYear();
-  <!-- 👇 agrégalo aquí -->
 
+  // Animación .reveal (IntersectionObserver)
   (function () {
     const els = document.querySelectorAll('.reveal');
     if (!els.length) return;
@@ -279,7 +278,6 @@
 
     els.forEach(el => io.observe(el));
   })();
-
 </script>
 </body>
 </html>
